@@ -11,3 +11,15 @@
 .button-container {
   justify-content: flex-end;
 }
+
+@media (max-width: 600px) {
+  .button-container {
+    padding: 8px 16px 16px 16px!important;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .button-container button {
+    width: 100%;
+  }
+}

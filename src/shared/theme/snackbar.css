@@ -1,0 +1,35 @@
+.snack_error > div {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.snack_success > div {
+  background-color: #43a047;
+  color: black;
+}
+
+.snack_warning > div {
+  background-color: #ffa000;
+  color: black;
+}
+
+.snack_info > div {
+  background-color: #90caf9;
+  color: black;
+}
+
+.snack button {
+  color: black;
+}
+
+.snack_error button {
+  color: white;
+}
+
+.snack .message_text {
+  margin-left: 28px;
+}
+
+.snack svg {
+  position: absolute;
+}

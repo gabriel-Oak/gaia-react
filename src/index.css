@@ -6,3 +6,7 @@
   outline: 0;
   border: 0;
 }
+
+.Field:not(:last-of-type) {
+  margin-bottom: 20px;
+}

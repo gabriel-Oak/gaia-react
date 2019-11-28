@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { authenticate } from './mainActions';
+import { authenticate, closeSnack } from './mainActions';
 
 import HomePage from './Home/HomePage'
 import { connect } from 'react-redux';
@@ -8,14 +8,17 @@ import { ReducersPool } from '../../reducers';
 import { mainState } from './mainReducer';
 import { getSession } from '../../shared/utils/auth';
 
+import Snack from '../../shared/components/snack/snack';
+
 interface Props extends mainState {
   authenticate: Function;
+  closeSnack: Function;
 }
 
 class MainRouter extends PureComponent<Props> {
 
   render(): ReactNode {
-    // const { token } = this.props;
+    const { snackbar, closeSnack } = this.props;
     const session = getSession();
 
     if (!session.token || session.expired) {
@@ -29,6 +32,11 @@ class MainRouter extends PureComponent<Props> {
             <Route path="/" exact component={HomePage} />
           </Switch>
         </BrowserRouter>
+
+        <Snack
+          closeSnack={closeSnack}
+          {...snackbar}
+        />
       </div>
     )
   }
@@ -40,7 +48,8 @@ const mapStateToProps = (state: ReducersPool) => {
 };
 
 const mapDispatchToProps = {
-  authenticate
+  authenticate,
+  closeSnack
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainRouter);

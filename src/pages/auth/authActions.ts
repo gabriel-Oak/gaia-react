@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Dispatch } from "redux";
 import { AuthActionsTypes } from "./authActionsTypes";
 import { api } from '../../enviroments/enviroments';
-import fireError from '../../shared/utils/fireError';
+import resolveError from '../../shared/utils/resolveError';
 
 export const logIn = (form: any) => async (dispatch: Dispatch) => {
   try {
@@ -16,8 +16,20 @@ export const logIn = (form: any) => async (dispatch: Dispatch) => {
 
 
   } catch (e) {
-    fireError(e)
+    dispatch({
+      type: AuthActionsTypes.FIRE_SNACK,
+      value: {
+        open: true,
+        type: 'error',
+        message: resolveError(e).message,
+        duration: 6000
+      }
+    })
   } finally {
     dispatch({ type: AuthActionsTypes.ENDED });
   }
 }
+
+export const closeSnack = () => ({
+  type: AuthActionsTypes.CLOSE_SNACK
+});

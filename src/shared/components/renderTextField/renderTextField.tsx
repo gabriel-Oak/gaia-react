@@ -24,7 +24,8 @@ const RenderTextField = (props: Props) => {
       {...rest}
       error={touched && !!error}
       helperText={touched && error}
-      style={{marginBottom: '20px'}}
+      className="Field"
+      // style={{marginBottom: '20px'}}
     />
   )
 }
