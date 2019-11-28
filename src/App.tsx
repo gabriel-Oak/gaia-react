@@ -6,7 +6,11 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 
+import { ThemeProvider } from '@material-ui/styles';
+import { theme } from './shared/theme/theme';
+
 import './App.css';
+import { CssBaseline } from '@material-ui/core';
 
 const App: React.FC = () => {
   const store = createStore(
@@ -16,7 +20,11 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <AppRouter />
+      <ThemeProvider theme={theme}>
+        <CssBaseline>
+          <AppRouter />
+        </CssBaseline>
+      </ThemeProvider>
     </Provider>
   );
 }

@@ -3,18 +3,32 @@ import { ReducersPool } from '../../reducers';
 import { AuthState } from './authReducer';
 import { connect } from 'react-redux';
 
-interface Props extends AuthState {
+import { setTitle } from '../main/mainActions';
 
+import { Card, CardHeader } from '@material-ui/core';
+import AuthForm from './AuthForm';
+
+interface Props extends AuthState {
+  setTitle: Function;
 }
 
 class AuthPage extends PureComponent<Props> {
-  // constructor(props: Props) {
-  //     super(props);
-  // }
+  constructor(props: Props) {
+    super(props);
+
+    this.props.setTitle('Login');
+  }
 
   render(): ReactNode {
     return (
-      <div>OLA LOGIN</div>
+      <main className="Auth">
+        <article className="Center-container s600">
+          <Card>
+            <CardHeader title="Login" />
+            <AuthForm />
+          </Card>
+        </article>
+      </main>
     )
   }
 }
@@ -25,6 +39,7 @@ const mapStateToProps = (state: ReducersPool) => {
 };
 
 const mapDispatchToProps = {
+  setTitle
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthPage);

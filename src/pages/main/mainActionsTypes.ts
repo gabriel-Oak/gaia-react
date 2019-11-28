@@ -4,5 +4,6 @@ export interface MainAction {
 }
 
 export const MainActionsTypes = {
-    AUTHENTICATED: 'AUTHENTICATED'
+    AUTHENTICATED: 'AUTHENTICATED',
+    SETTITLE: 'SETTITLE'
 }

@@ -1,0 +1,13 @@
+.Center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Center-container-Vertical {
+  margin: 120px auto 10px auto;
+}
+
+.button-container {
+  justify-content: flex-end;
+}
