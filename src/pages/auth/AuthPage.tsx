@@ -4,12 +4,14 @@ import { AuthState } from './authReducer';
 import { connect } from 'react-redux';
 
 import { setTitle } from '../main/mainActions';
+import { logIn } from './authActions';
 
 import { Card, CardHeader } from '@material-ui/core';
 import AuthForm from './AuthForm';
 
 interface Props extends AuthState {
   setTitle: Function;
+  logIn: any;
 }
 
 class AuthPage extends PureComponent<Props> {
@@ -24,8 +26,13 @@ class AuthPage extends PureComponent<Props> {
       <main className="Auth">
         <article className="Center-container s600">
           <Card>
+
             <CardHeader title="Login" />
-            <AuthForm />
+            <AuthForm
+              onSubmit={this.props.logIn}
+              {...this.props}
+            />
+
           </Card>
         </article>
       </main>
@@ -39,7 +46,8 @@ const mapStateToProps = (state: ReducersPool) => {
 };
 
 const mapDispatchToProps = {
-  setTitle
+  setTitle,
+  logIn
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthPage);

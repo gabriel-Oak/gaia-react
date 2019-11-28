@@ -4,5 +4,8 @@ export interface AuthAction {
 }
 
 export const AuthActionsTypes = {
-
+    FAIL: 'FAIL',
+    SENDED: 'SENDED',
+    ENDED: 'ENDED',
+    SUCCESS: 'SUCCESS'
 }

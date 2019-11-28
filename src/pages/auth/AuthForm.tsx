@@ -4,33 +4,31 @@ import { Field, reduxForm } from 'redux-form';
 import { required } from '../../shared/validators/validators';
 import RenderTextField from '../../shared/components/renderTextField/renderTextField';
 
-import { Button, CardActions, CardContent } from '@material-ui/core';
+import { Button, CardActions, CardContent, CircularProgress } from '@material-ui/core';
 
 import './Auth.css';
 
-interface Props {
-
-}
-
-const AuthForm = (props: Props) => {
-  // const { } = props
+const AuthForm = (props: any) => {
+  const { handleSubmit, onSubmit, loading } = props
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
 
       <CardContent className="field_wrapper">
         <Field
           name="user"
           label="Usuário"
           variant="outlined"
+          disabled={loading}
           component={RenderTextField}
           validate={[required]}
         />
 
         <Field
-          name="password"
+          name="senha"
           label="Senha"
           variant="outlined"
+          disabled={loading}
           component={RenderTextField}
           validate={[required]}
         />
@@ -41,8 +39,13 @@ const AuthForm = (props: Props) => {
           color="primary"
           variant="contained"
           type="submit"
+          disabled={loading}
         >
-          Entrar
+          {
+            loading
+              ? <CircularProgress size={24} />
+              : 'Entrar'
+          }
         </Button>
       </CardActions>
     </form>
