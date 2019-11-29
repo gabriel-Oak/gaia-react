@@ -28,6 +28,7 @@ const AuthForm = (props: any) => {
           name="senha"
           label="Senha"
           variant="outlined"
+          type="password"
           disabled={loading}
           component={RenderTextField}
           validate={[required]}
