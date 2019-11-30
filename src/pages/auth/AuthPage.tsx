@@ -9,6 +9,8 @@ import { logIn, closeSnack } from './authActions';
 import { Card, CardHeader } from '@material-ui/core';
 import AuthForm from './AuthForm';
 import Snack from '../../shared/components/snack/snack';
+import { getSession } from '../../shared/utils/auth';
+import { Redirect } from 'react-router';
 
 interface Props extends AuthState {
   setTitle: Function;
@@ -25,6 +27,10 @@ class AuthPage extends PureComponent<Props> {
 
   render(): ReactNode {
     const { snackbar, closeSnack } = this.props;
+    
+    if (!getSession().expired) {
+      return <Redirect to="/" />
+    }
 
     return (
       <main className="Auth">

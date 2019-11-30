@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { authenticate, closeSnack } from './mainActions';
+import { fetchUser, closeSnack } from './mainActions';
 
 import HomePage from './Home/HomePage'
 import { connect } from 'react-redux';
@@ -9,30 +9,61 @@ import { mainState } from './mainReducer';
 import { getSession } from '../../shared/utils/auth';
 
 import Snack from '../../shared/components/snack/snack';
+import { CircularProgress } from '@material-ui/core';
+import { History } from 'history';
+import ToolBar from './components/ToolBar';
+
+import './Main.css';
 
 interface Props extends mainState {
-  authenticate: Function;
+  fetchUser: Function;
   closeSnack: Function;
+  history: History;
 }
 
 class MainRouter extends PureComponent<Props> {
 
   render(): ReactNode {
-    const { snackbar, closeSnack } = this.props;
-    const session = getSession();
+    const {
+      snackbar,
+      closeSnack,
+      user,
+      fetchUser,
+      history,
+      title
+    } = this.props;
 
-    if (!session.token || session.expired) {
+    const session = getSession();
+    console.log(this.props);
+
+    if (session.expired) {
       return <Redirect to="login" />
+    }
+
+    if (!user) {
+      fetchUser(session.token, history);
     }
 
     return (
       <div className="Main">
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-          </Switch>
-        </BrowserRouter>
+        <ToolBar
+          title={title}
+          history={history}
+        />
 
+        {
+          user ?
+
+            <BrowserRouter>
+              <Switch>
+                <Route path="/" exact component={HomePage} />
+              </Switch>
+            </BrowserRouter> :
+
+            <div className="Center-container">
+              <CircularProgress size={80} />
+            </div>
+        }
         <Snack
           closeSnack={closeSnack}
           {...snackbar}
@@ -48,7 +79,7 @@ const mapStateToProps = (state: ReducersPool) => {
 };
 
 const mapDispatchToProps = {
-  authenticate,
+  fetchUser,
   closeSnack
 };
 

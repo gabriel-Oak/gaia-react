@@ -1,4 +1,4 @@
-const base = 'http://gaia-smn.herokuapp.com';
+const base = 'https://gaia-smn.herokuapp.com';
 
 export const api = {
   user: `${base}/usuario`,

@@ -4,16 +4,22 @@ import { Dispatch } from "redux";
 import { AuthActionsTypes } from "./authActionsTypes";
 import { api } from '../../enviroments/enviroments';
 import resolveError from '../../shared/utils/resolveError';
+import { setSession } from '../../shared/utils/auth';
+import { MainActionsTypes } from '../main/mainActionsTypes';
 
 export const logIn = (form: any) => async (dispatch: Dispatch) => {
   try {
-
+    
     dispatch({ type: AuthActionsTypes.SENDED });
 
-    const { data } = await axios.post(`${api.user}/${form.user}`, form);
+    const { data: { token, user } } = await axios.post(`${api.user}/${form.user}`, form);
 
-    console.log(data);
+    setSession(token);
 
+    dispatch({
+      type: MainActionsTypes.FETCH_USER,
+      value: user
+    });
 
   } catch (e) {
     dispatch({
@@ -24,7 +30,7 @@ export const logIn = (form: any) => async (dispatch: Dispatch) => {
         message: resolveError(e).message,
         duration: 6000
       }
-    })
+    });
   } finally {
     dispatch({ type: AuthActionsTypes.ENDED });
   }

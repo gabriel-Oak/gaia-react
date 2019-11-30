@@ -22,7 +22,7 @@ const Snack = (props: Props) => {
     duration,
     closeSnack
   } = props
-
+  
   const icons = {
     success: <CheckCircleIcon />,
     error: <ErrorIcon />,
@@ -42,6 +42,7 @@ const Snack = (props: Props) => {
       ContentProps={{
         'aria-describedby': 'message-id',
       }}
+      onClose={closeSnack}
       message={
         <span id="message-id">
           {icons[type || 'info']}

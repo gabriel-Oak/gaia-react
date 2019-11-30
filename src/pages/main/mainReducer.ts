@@ -1,8 +1,9 @@
 import { MainAction, MainActionsTypes } from "./mainActionsTypes"
+import { User } from "../../shared/interfaces/user"
 
 export interface mainState {
     title: string;
-    token?: string;
+    user?: User;
     snackbar: {
         open: boolean;
         message?: string;
@@ -20,8 +21,8 @@ const INITIAL_STATE: mainState = {
 
 const mainReducer = (state = INITIAL_STATE, action: MainAction) => {    
     switch (action.type) {
-        case MainActionsTypes.AUTHENTICATED:
-            return { ...state, auth: true, token: action.value }
+        case MainActionsTypes.FETCH_USER:
+            return { ...state, auth: true, user: action.value }
 
         case MainActionsTypes.SETTITLE:
             return { ...state, title: action.value }

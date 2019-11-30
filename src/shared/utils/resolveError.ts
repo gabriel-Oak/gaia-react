@@ -9,6 +9,10 @@ const resolveError = (e: any) => {
     e.message = response.data.message
   }
 
+  if (!e.message) {
+    e.message = 'Ocorreu algum erro interno'
+  }
+
   return e;
 }
 

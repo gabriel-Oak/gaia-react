@@ -16,10 +16,12 @@ export const setSession = (token: string) => {
 export const getSession: () => GaiaSession = () => {
     if (localStorage.gaiaSession) {
         const gaiaSession: GaiaSession = JSON.parse(localStorage.gaiaSession);
-        gaiaSession.expired = new Date().getTime() < (gaiaSession.expiresIn || 0);
+        gaiaSession.expired = new Date().getTime() > (gaiaSession.expiresIn || 0);
 
         return gaiaSession;
     }
 
     return { token: null, expiresIn: null, expired: true };
 }
+
+export const clearSession = () => localStorage.removeItem('gaiaSession');

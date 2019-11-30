@@ -4,7 +4,7 @@ export interface MainAction {
 }
 
 export const MainActionsTypes = {
-    AUTHENTICATED: 'AUTHENTICATED',
+    FETCH_USER: 'FETCH_USER',
     SETTITLE: 'SETTITLE',
     FIRE_SNACK: 'FIRE_SNACK',
     CLOSE_SNACK: 'CLOSE_SNACK'
