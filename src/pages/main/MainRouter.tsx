@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { fetchUser, closeSnack } from './mainActions';
+import { fetchUser, closeSnack, toggleDrawer } from './mainActions';
 
 import HomePage from './Home/HomePage'
 import { connect } from 'react-redux';
@@ -14,10 +14,12 @@ import { History } from 'history';
 import ToolBar from './components/ToolBar';
 
 import './Main.css';
+import SideDrawer from './components/SideDrawer';
 
 interface Props extends mainState {
   fetchUser: Function;
   closeSnack: Function;
+  toggleDrawer: Function;
   history: History;
 }
 
@@ -30,11 +32,12 @@ class MainRouter extends PureComponent<Props> {
       user,
       fetchUser,
       history,
-      title
+      title,
+      drawer,
+      toggleDrawer
     } = this.props;
 
     const session = getSession();
-    console.log(this.props);
 
     if (session.expired) {
       return <Redirect to="login" />
@@ -49,6 +52,12 @@ class MainRouter extends PureComponent<Props> {
         <ToolBar
           title={title}
           history={history}
+          toggleDrawer={toggleDrawer}
+        />
+
+        <SideDrawer
+          open={drawer}
+          toggleDrawer={toggleDrawer}
         />
 
         {
@@ -80,7 +89,8 @@ const mapStateToProps = (state: ReducersPool) => {
 
 const mapDispatchToProps = {
   fetchUser,
-  closeSnack
+  closeSnack,
+  toggleDrawer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainRouter);

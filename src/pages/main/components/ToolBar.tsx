@@ -8,10 +8,11 @@ import { clearSession } from '../../../shared/utils/auth';
 interface Props {
   title: string;
   history: History;
+  toggleDrawer: any;
 }
 
 const ToolBar = (props: Props) => {
-  const { title, history } = props;
+  const { title, history, toggleDrawer } = props;
 
   const logOut = () => {
     clearSession();
@@ -19,9 +20,14 @@ const ToolBar = (props: Props) => {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{zIndex: 1301}}>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
+        <IconButton 
+          edge="start" 
+          color="inherit" 
+          aria-label="menu"
+          onClick={toggleDrawer}
+        >
           <MenuIcon />
         </IconButton>
 

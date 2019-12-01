@@ -64,3 +64,7 @@ export const fireSnack = (
 export const closeSnack = () => ({
   type: MainActionsTypes.CLOSE_SNACK
 });
+
+export const toggleDrawer = () => ({
+  type: MainActionsTypes.TOGGLE_DRAWER
+})

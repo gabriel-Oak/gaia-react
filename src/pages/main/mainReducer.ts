@@ -4,6 +4,7 @@ import { User } from "../../shared/interfaces/user"
 export interface mainState {
     title: string;
     user?: User;
+    drawer: boolean;
     snackbar: {
         open: boolean;
         message?: string;
@@ -14,6 +15,7 @@ export interface mainState {
 
 const INITIAL_STATE: mainState = {
     title: 'Gaia',
+    drawer: false,
     snackbar: {
         open: false,
     }
@@ -23,6 +25,9 @@ const mainReducer = (state = INITIAL_STATE, action: MainAction) => {
     switch (action.type) {
         case MainActionsTypes.FETCH_USER:
             return { ...state, auth: true, user: action.value }
+
+        case MainActionsTypes.TOGGLE_DRAWER:
+            return {...state, drawer: !state.drawer }
 
         case MainActionsTypes.SETTITLE:
             return { ...state, title: action.value }
