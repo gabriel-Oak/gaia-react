@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.Center-container-Horizontal {
+.Center-container-horizontal {
   margin: 120px auto 10px auto;
 }
 
@@ -13,6 +13,10 @@
 }
 
 @media (max-width: 600px) {
+  .Center-container-horizontal {
+    margin: 0px auto 10px auto;
+  }
+
   .button-container {
     padding: 8px 16px 16px 16px !important;
     text-align: center;

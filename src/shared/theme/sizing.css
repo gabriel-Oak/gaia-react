@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.s800 {
+  max-width: 800px;
+  width: 100%;
+}
+
 .s840 {
   max-width: 840px;
   width: 100%;
