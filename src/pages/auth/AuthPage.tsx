@@ -19,9 +19,9 @@ interface Props extends AuthState {
 }
 
 class AuthPage extends PureComponent<Props> {
+
   constructor(props: Props) {
     super(props);
-
     this.props.setTitle('Login');
   }
 

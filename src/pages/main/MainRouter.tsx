@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { fetchUser, closeSnack, toggleDrawer } from './mainActions';
+import { fetchUser, closeSnack, toggleDrawer, redirect_to } from './mainActions';
 
 import HomePage from './Home/HomePage'
 import { connect } from 'react-redux';
@@ -15,17 +15,20 @@ import ToolBar from './components/ToolBar';
 
 import './Main.css';
 import SideDrawer from './components/SideDrawer';
+import NotFoundPage from './NotFound/NotFoundPage';
 
 interface Props extends mainState {
   fetchUser: Function;
   closeSnack: Function;
   toggleDrawer: Function;
+  redirect_to: Function;
   history: History;
 }
 
 class MainRouter extends PureComponent<Props> {
 
   render(): ReactNode {
+    
     const {
       snackbar,
       closeSnack,
@@ -34,7 +37,9 @@ class MainRouter extends PureComponent<Props> {
       history,
       title,
       drawer,
-      toggleDrawer
+      toggleDrawer,
+      redirect,
+      redirect_to
     } = this.props;
 
     const session = getSession();
@@ -47,6 +52,11 @@ class MainRouter extends PureComponent<Props> {
       fetchUser(session.token, history);
     }
 
+    if (redirect) {
+      redirect_to(null);
+      return <Redirect to={redirect} />
+    }
+
     return (
       <div className="Main">
         <ToolBar
@@ -57,7 +67,7 @@ class MainRouter extends PureComponent<Props> {
 
         <SideDrawer
           open={drawer}
-          history={history}
+          redirect_to={redirect_to}
           toggleDrawer={toggleDrawer}
         />
 
@@ -67,6 +77,7 @@ class MainRouter extends PureComponent<Props> {
             <BrowserRouter>
               <Switch>
                 <Route path="/" exact component={HomePage} />
+                <Route path="**" component={NotFoundPage} />
               </Switch>
             </BrowserRouter> :
 
@@ -91,7 +102,8 @@ const mapStateToProps = (state: ReducersPool) => {
 const mapDispatchToProps = {
   fetchUser,
   closeSnack,
-  toggleDrawer
+  toggleDrawer,
+  redirect_to
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainRouter);

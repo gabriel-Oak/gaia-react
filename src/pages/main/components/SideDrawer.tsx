@@ -4,17 +4,16 @@ import { IconButton, List, ListItem, ListItemText, ListItemIcon, SwipeableDrawer
 // import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
-import { History } from 'history';
 
 
 interface Props {
   open: boolean
   toggleDrawer: any;
-  history: History;
+  redirect_to: Function;
 }
 
 const SideDrawer = (props: Props) => {
-  const { open, toggleDrawer, history } = props
+  const { open, toggleDrawer, redirect_to } = props
 
   const list = [
     {
@@ -25,8 +24,8 @@ const SideDrawer = (props: Props) => {
   ];
 
   const navigate = (url: string) => {
-    history.push(url);
-    setTimeout(toggleDrawer, 380);
+    redirect_to(url)
+    toggleDrawer();
   }
 
   return (

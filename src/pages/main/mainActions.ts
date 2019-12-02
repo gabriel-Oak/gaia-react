@@ -68,3 +68,8 @@ export const closeSnack = () => ({
 export const toggleDrawer = () => ({
   type: MainActionsTypes.TOGGLE_DRAWER
 })
+
+export const redirect_to = (url: string) => ({
+  type: MainActionsTypes.REDIRECT,
+  value: url
+})
