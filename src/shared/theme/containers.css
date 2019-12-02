@@ -4,22 +4,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.Center-container-Vertical {
+.Center-container-Horizontal {
   margin: 120px auto 10px auto;
 }
 
 .button-container {
-  justify-content: flex-end;
+  text-align: right;
 }
 
 @media (max-width: 600px) {
   .button-container {
-    padding: 8px 16px 16px 16px!important;
-    justify-content: center;
-    flex-direction: column;
+    padding: 8px 16px 16px 16px !important;
+    text-align: center;
   }
-  
-  .button-container button {
+
+  .button-container.right {
+    text-align: right;
+  }
+
+  .button-container button.full-on-phone {
     width: 100%;
   }
 }

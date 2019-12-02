@@ -57,6 +57,7 @@ class MainRouter extends PureComponent<Props> {
 
         <SideDrawer
           open={drawer}
+          history={history}
           toggleDrawer={toggleDrawer}
         />
 

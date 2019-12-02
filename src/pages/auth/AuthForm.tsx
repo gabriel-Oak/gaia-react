@@ -41,6 +41,7 @@ const AuthForm = (props: any) => {
           variant="contained"
           type="submit"
           disabled={loading}
+          className="full-on-phone"
         >
           {
             loading
