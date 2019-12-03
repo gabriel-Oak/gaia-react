@@ -1,12 +1,15 @@
 import React, { PureComponent, ReactNode } from 'react'
 
+import { connect } from 'react-redux';
 import { ReducersPool } from '../../../reducers';
 import { setTitle } from '../mainActions';
-import { connect } from 'react-redux';
+import { setTab } from './homeActions';
 import WeekTabs from '../../../shared/components/WeekTabs/WeekTabs';
+import { homeState } from './homeReducer';
 
-interface Props {
+interface Props extends homeState {
   setTitle: Function;
+  setTab: Function;
 }
 
 class HomePage extends PureComponent<Props> {
@@ -17,10 +20,18 @@ class HomePage extends PureComponent<Props> {
   }
 
   render(): ReactNode {
+    const { setTab, tabIndex } = this.props;
+
     return (
       <main className="Home">
         <article className="Center-container-horizontal s800">
-          <WeekTabs index={2} onChange={() => 1 + 2} />
+          <WeekTabs index={tabIndex} onChange={setTab}>
+            <div>tab 1<br /> tab 1<br /> tab 1<br /> tab 1</div>
+            <div>tab 2<br /> tab 2<br /> tab 2<br /> tab 2</div>
+            <div>tab 3<br /> tab 3<br /> tab 3<br /> tab 3</div>
+            <div>tab 4<br /> tab 4<br /> tab 4<br /> tab 4</div>
+            <div>tab 5<br /> tab 5<br /> tab 5<br /> tab 5</div>
+          </WeekTabs>
         </article>
       </main>
     )
@@ -28,11 +39,13 @@ class HomePage extends PureComponent<Props> {
 }
 
 const mapStateToProps = (state: ReducersPool) => {
-  return {};
+  const { homeReducer } = state;
+  return homeReducer;
 };
 
 const mapDispatchToProps = {
   setTitle,
+  setTab
 };
 
 

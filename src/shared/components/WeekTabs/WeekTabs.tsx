@@ -9,23 +9,26 @@ import './WeekTabs.css';
 interface Props {
   index: number;
   onChange: any;
+  children: React.ReactNode;
 }
 
 const WeekTabs = (props: Props) => {
   const {
     index,
-    onChange
+    onChange,
+    children
   } = props;
 
   const days = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'];
   const theme = useTheme();
 
-  const handleChangeIndex = (index: number) => onChange(index);
+  const handleChangeView = (index: number) => onChange(index);
+  const handleChangeTabs = (event: React.ChangeEvent<{}>, newValue: number) => onChange(newValue);
 
   return (
     <section className="WeekTabs">
       <Tabs
-        onChange={onChange}
+        onChange={handleChangeTabs}
         value={index}
         indicatorColor="primary"
         textColor="primary"
@@ -41,15 +44,12 @@ const WeekTabs = (props: Props) => {
       </Tabs>
 
       <SwipeableViews
+        enableMouseEvents
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={index}
-        onChangeIndex={handleChangeIndex}
+        onChangeIndex={handleChangeView}
       >
-        <div>teste</div>
-        <div>teste</div>
-        <div>teste</div>
-        <div>teste</div>
-        <div>teste</div>
+        {children}
       </SwipeableViews>
     </section>
   )
