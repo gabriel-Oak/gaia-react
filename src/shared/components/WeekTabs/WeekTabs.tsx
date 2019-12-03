@@ -33,7 +33,7 @@ const WeekTabs = (props: Props) => {
         indicatorColor="primary"
         textColor="primary"
         aria-label="week tabs"
-        variant="scrollable"
+        variant="fullWidth"
         scrollButtons="auto"
       >
         {

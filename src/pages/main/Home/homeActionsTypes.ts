@@ -4,5 +4,8 @@ export interface HomeAction {
 };
 
 export const HomeActionsTypes = {
+  COMPLETE: 'COMPLETE',
+  FIRE_SNACK: 'FIRE_SNACK',
+  SENDING: 'SENDING',
   SET_TAB: 'SET_TAB'
 }

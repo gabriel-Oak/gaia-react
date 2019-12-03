@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { MainActionsTypes } from "./mainActionsTypes";
+import { MainActionsTypes, MainAction } from "./mainActionsTypes";
 import { Dispatch } from "redux";
 import { AuthActionsTypes } from "../auth/authActionsTypes";
 import { api } from '../../enviroments/enviroments';
 import { History } from 'history';
 import { clearSession } from '../../shared/utils/auth';
 
-export const fetchUser = (token: string, history: History) => async (dispatch: Dispatch) => {
+export const fetchUser = (token: string, history: History) => async (dispatch: Dispatch<MainAction>) => {
   try {
 
     const { data: { user } } = await axios.get(`${api.user}/`, {
@@ -39,7 +39,7 @@ export const fetchUser = (token: string, history: History) => async (dispatch: D
   }
 }
 
-export const setTitle = (title: string) => (dispacth: Dispatch) => {
+export const setTitle = (title: string) => (dispacth: Dispatch<MainAction>) => {
   document.title = `Gaia | ${title}`;
   dispacth({
     type: MainActionsTypes.SETTITLE,

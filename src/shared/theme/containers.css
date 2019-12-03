@@ -9,7 +9,8 @@
 }
 
 .button-container {
-  text-align: right;
+  justify-content: flex-end; 
+
 }
 
 @media (max-width: 600px) {
@@ -23,7 +24,7 @@
   }
 
   .button-container.right {
-    text-align: right;
+    justify-content: flex-end; 
   }
 
   .button-container button.full-on-phone {
