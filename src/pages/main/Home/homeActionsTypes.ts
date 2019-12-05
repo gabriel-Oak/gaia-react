@@ -1,10 +1,6 @@
-export interface HomeAction {
-  type: string;
-  value?: any;
-};
-
 export const HomeActionsTypes = {
   COMPLETE: 'COMPLETE',
+  FECTCH_MENUS: 'FETCH_MENUS',
   FIRE_SNACK: 'FIRE_SNACK',
   SENDING: 'SENDING',
   SET_TAB: 'SET_TAB'

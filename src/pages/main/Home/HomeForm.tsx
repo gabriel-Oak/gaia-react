@@ -2,37 +2,45 @@ import React from 'react'
 import WeekTabs from '../../../shared/components/WeekTabs/WeekTabs';
 import { reduxForm } from 'redux-form';
 import HomeFormTab from './homeFormTab';
-import { Button, Card, CardActions } from '@material-ui/core';
+import { Button, Card, CardActions, CircularProgress } from '@material-ui/core';
 
 const HomeForm = (props: any) => {
-  const { handleSubmit, onSubmit, tabIndex, setTab, loading } = props;
+  const { handleSubmit, onSubmit, tabIndex, setTab, loading, menus } = props;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Card>
+      {
+        loading && !menus ?
 
-        <WeekTabs index={tabIndex} onChange={setTab}>
+          <div className="Center-container">
+            <CircularProgress size={80} />
+          </div> :
 
-          <HomeFormTab name='troca0' loading={loading} />
-          <HomeFormTab name='troca1' loading={loading} />
-          <HomeFormTab name='troca2' loading={loading} />
-          <HomeFormTab name='troca3' loading={loading} />
-          <HomeFormTab name='troca4' loading={loading} />
+          <Card>
 
-        </WeekTabs>
+            <WeekTabs index={tabIndex} onChange={setTab}>
 
-        <CardActions className="button-container">
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            disabled={loading}
-          >
-            Trocar
-          </Button>
-        </CardActions>
+              <HomeFormTab name='troca0' loading={loading} />
+              <HomeFormTab name='troca1' loading={loading} />
+              <HomeFormTab name='troca2' loading={loading} />
+              <HomeFormTab name='troca3' loading={loading} />
+              <HomeFormTab name='troca4' loading={loading} />
 
-      </Card>
+            </WeekTabs>
+
+            <CardActions className="button-container">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={loading}
+              >
+                Trocar
+              </Button>
+            </CardActions>
+
+          </Card>
+      }
     </form>
   );
 }

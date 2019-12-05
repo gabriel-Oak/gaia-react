@@ -1,18 +1,24 @@
-import { HomeAction, HomeActionsTypes } from "./homeActionsTypes";
+import { HomeActionsTypes } from "./homeActionsTypes";
+import Action from "../../../shared/interfaces/Action";
+import Menu from "../../../shared/interfaces/Menu";
 
 export interface homeState {
     tabIndex: number;
     loading?: boolean;
+    menus?: Menu[]; 
 }
 
 const INITIAL_STATE: homeState = {
     tabIndex: 0
 }
 
-const homeReducer = (state = INITIAL_STATE, action: HomeAction) => {
+const homeReducer = (state = INITIAL_STATE, action: Action) => {
     switch (action.type) {
         case HomeActionsTypes.COMPLETE:
-            return { ...state, loading: false};
+            return { ...state, loading: false };
+
+        case HomeActionsTypes.FECTCH_MENUS:
+            return { ...state, menus: action.value }
 
         case HomeActionsTypes.SENDING:
             return { ...state, loading: true };

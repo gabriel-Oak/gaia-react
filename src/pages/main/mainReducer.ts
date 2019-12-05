@@ -1,17 +1,14 @@
-import { MainAction, MainActionsTypes } from "./mainActionsTypes"
-import { User } from "../../shared/interfaces/user"
+import { MainActionsTypes } from "./mainActionsTypes"
+import { User } from "../../shared/interfaces/User"
+import Action from "../../shared/interfaces/Action"
+import Snackbar from "../../shared/interfaces/Snackbar"
 
 export interface mainState {
     title: string;
     user?: User;
     drawer: boolean;
     redirect?: string | null;
-    snackbar: {
-        open: boolean;
-        message?: string;
-        type?: 'success' | 'error' | 'info' | 'warning';
-        duration?: number
-    };
+    snackbar: Snackbar
 }
 
 const INITIAL_STATE: mainState = {
@@ -22,7 +19,7 @@ const INITIAL_STATE: mainState = {
     }
 }
 
-const mainReducer = (state = INITIAL_STATE, action: MainAction) => {
+const mainReducer = (state = INITIAL_STATE, action: Action) => {
     switch (action.type) {
         case MainActionsTypes.FETCH_USER:
             return { ...state, auth: true, user: action.value }

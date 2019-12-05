@@ -1,13 +1,14 @@
 import axios from 'axios';
 
 import { Dispatch } from "redux";
-import { AuthActionsTypes, AuthAction } from "./authActionsTypes";
+import { AuthActionsTypes } from "./authActionsTypes";
 import { api } from '../../enviroments/enviroments';
 import resolveError from '../../shared/utils/resolveError';
 import { setSession } from '../../shared/utils/auth';
 import { MainActionsTypes } from '../main/mainActionsTypes';
+import Action from '../../shared/interfaces/Action';
 
-export const logIn = (form: any) => async (dispatch: Dispatch<AuthAction>) => {
+export const logIn = (form: any) => async (dispatch: Dispatch<Action>) => {
   try {
     
     dispatch({ type: AuthActionsTypes.SENDED });

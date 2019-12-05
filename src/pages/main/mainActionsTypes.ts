@@ -1,8 +1,3 @@
-export interface MainAction {
-    type: string;
-    value?: any;
-}
-
 export const MainActionsTypes = {
     FETCH_USER: 'FETCH_USER',
     SETTITLE: 'SETTITLE',

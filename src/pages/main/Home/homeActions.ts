@@ -1,15 +1,16 @@
 import axios from 'axios';
-import { HomeActionsTypes, HomeAction } from "./homeActionsTypes";
+import { HomeActionsTypes } from "./homeActionsTypes";
 import { Dispatch } from "redux";
 import { api } from '../../../enviroments/enviroments';
 import resolveError from '../../../shared/utils/resolveError';
+import Action from '../../../shared/interfaces/Action';
 
 export const setTab = (index: number) => ({
   type: HomeActionsTypes.SET_TAB,
   value: index
 });
 
-export const fetchMenus = (token: string) => async (dispatch: Dispatch<HomeAction>) => {
+export const fetchMenus = (token: string) => async (dispatch: Dispatch<Action>) => {
   try {
     dispatch({ type: HomeActionsTypes.SENDING });
 
@@ -19,8 +20,11 @@ export const fetchMenus = (token: string) => async (dispatch: Dispatch<HomeActio
       }
     });
 
-    console.log(data);
-    
+    dispatch({
+      type: HomeActionsTypes.FECTCH_MENUS,
+      value: data
+    });
+
   } catch (e) {
 
     dispatch({

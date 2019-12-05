@@ -1,14 +1,11 @@
-import { AuthAction, AuthActionsTypes } from './authActionsTypes';
+import { AuthActionsTypes } from './authActionsTypes';
+import Action from '../../shared/interfaces/Action';
+import Snackbar from '../../shared/interfaces/Snackbar';
 
 export interface AuthState {
     loading: boolean;
     auth: boolean;
-    snackbar: {
-        open: boolean;
-        message?: string;
-        type?: 'success' | 'error' | 'info' | 'warning';
-        duration?: number
-    };
+    snackbar: Snackbar
 }
 
 const INITIAL_STATE: AuthState = {
@@ -19,7 +16,7 @@ const INITIAL_STATE: AuthState = {
     }
 }
 
-const authReducer = (state = INITIAL_STATE, action: AuthAction) => {
+const authReducer = (state = INITIAL_STATE, action: Action) => {
     switch (action.type) {
         case AuthActionsTypes.SENDED:
             return { ...state, loading: true }
