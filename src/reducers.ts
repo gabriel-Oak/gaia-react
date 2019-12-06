@@ -9,6 +9,7 @@ export interface ReducersPool {
   authReducer: AuthState;
   homeReducer: homeState;
   mainReducer: mainState;
+  form: Object;
 }
 
 export default combineReducers({

@@ -27,9 +27,23 @@
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "start": "node ./server"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest-setup.ts"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,9 +61,19 @@
     ]
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-redux": "^7.1.5",
     "@types/react-router-dom": "^5.1.3",
     "@types/react-swipeable-views": "^0.13.0",
-    "@types/redux-form": "^8.2.0"
+    "@types/redux-form": "^8.2.0",
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "react-addons-test-utils": "^15.6.2",
+    "ts-jest": "^24.2.0"
   }
 }
