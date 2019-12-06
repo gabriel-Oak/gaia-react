@@ -1,0 +1,42 @@
+.Home_form_tab_ListItem {
+  display: flex !important;
+  justify-content: space-between !important;
+  min-height: 64px;
+}
+
+.Home_form_tab_ListItem span:nth-of-type(1) {
+  opacity: 0.6;
+}
+
+.Home_form_tab_ListItem span:nth-of-type(2) {
+  font-size: 16px;
+}
+
+.Home_form_tab_ListItem:nth-child(odd) {
+  background-color: rgb(95, 95, 95) !important;
+}
+
+.Home_form_tab_Chose {
+  min-width: 200px !important;
+}
+
+.Home_form_tab_Chose {
+  min-height: 17px;
+}
+
+@media screen and (max-width: 480px) {
+  li.Home_form_tab_ListItem:not(:last-of-type) {
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  .Home_form_tab_ListItem label {
+    display: none;
+  }
+
+  .Home_form_tab_ListItem .MuiInput-root {
+    margin-top: 0;
+  }
+}

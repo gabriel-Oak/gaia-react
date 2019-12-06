@@ -5,11 +5,12 @@ import Menu from "../../../shared/interfaces/Menu";
 export interface homeState {
     tabIndex: number;
     loading?: boolean;
-    menus?: Menu[]; 
+    menus: Menu[]; 
 }
 
 const INITIAL_STATE: homeState = {
-    tabIndex: 0
+    tabIndex: 0,
+    menus: []
 }
 
 const homeReducer = (state = INITIAL_STATE, action: Action) => {

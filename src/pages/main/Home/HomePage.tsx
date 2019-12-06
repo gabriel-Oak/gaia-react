@@ -8,6 +8,8 @@ import { homeState } from './homeReducer';
 import HomeForm from './HomeForm';
 import { getSession } from '../../../shared/utils/auth';
 
+import './Home.css';
+
 interface Props extends homeState {
   setTitle: Function;
   setTab: Function;
@@ -33,7 +35,7 @@ class HomePage extends PureComponent<Props> {
     return (
       <main className="Home">
         <article className="Center-container-horizontal s800">
-
+        
           <HomeForm
             {...this.props}
             onSubmit={this.onSubmit}
