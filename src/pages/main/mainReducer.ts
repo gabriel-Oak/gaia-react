@@ -1,7 +1,7 @@
-import { MainActionsTypes } from "./mainActionsTypes"
-import { User } from "../../shared/interfaces/User"
-import Action from "../../shared/interfaces/Action"
-import Snackbar from "../../shared/interfaces/Snackbar"
+import { MainActionsTypes } from "./mainActionsTypes";
+import { User } from "../../shared/interfaces/User";
+import Action from "../../shared/interfaces/Action";
+import Snackbar from "../../shared/interfaces/Snackbar";
 
 export interface mainState {
     title: string;
