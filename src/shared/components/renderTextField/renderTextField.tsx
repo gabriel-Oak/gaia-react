@@ -3,7 +3,7 @@ import { TextField } from '@material-ui/core'
 
 interface Props {
   input: any;
-  variant: 'outlined';
+  variant: 'outlined' | 'standart';
   meta: {
     touched: boolean;
     error: string;
@@ -25,9 +25,8 @@ const RenderTextField = (props: Props) => {
       error={touched && !!error}
       helperText={touched && error}
       className="Field"
-      // style={{marginBottom: '20px'}}
     />
-  )
+  );
 }
 
 export default RenderTextField

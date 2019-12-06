@@ -1,8 +1,8 @@
 import React from 'react'
-import RenderTextField from '../../../shared/components/renderTextField/renderTextField';
 import { Field } from 'redux-form';
 import { CardContent, List, ListItem, Checkbox } from '@material-ui/core';
 import Menu from '../../../shared/interfaces/Menu';
+import RenderSelectField from '../../../shared/components/renderSelectField/renderSelectField';
 
 interface Props {
   name: string;
@@ -24,8 +24,14 @@ const HomeFormTab = (props: Props) => {
           <Field
             name={name}
             label="Prato Principal"
-            component={RenderTextField}
+            component={RenderSelectField}
             disabled={loading}
+            options={[
+              { name: menu.pratoPrincipal },
+              { name: menu.opcao1 },
+              { name: menu.opcao2 }
+            ]}
+            model={{ value: 'name' }}
           />
         </ListItem>
 

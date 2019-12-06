@@ -24,6 +24,10 @@
   min-height: 17px;
 }
 
+.Home_form_tab_ListItem .MuiInput-root  {
+    min-width: 200px;
+}
+
 @media screen and (max-width: 480px) {
   li.Home_form_tab_ListItem:not(:last-of-type) {
     flex-direction: column;
@@ -38,5 +42,6 @@
 
   .Home_form_tab_ListItem .MuiInput-root {
     margin-top: 0;
+    width: 100%;
   }
 }

@@ -4,6 +4,7 @@ import { Dispatch } from "redux";
 import { api } from '../../../enviroments/enviroments';
 import resolveError from '../../../shared/utils/resolveError';
 import Action from '../../../shared/interfaces/Action';
+import Menu from '../../../shared/interfaces/Menu';
 
 export const setTab = (index: number) => ({
   type: HomeActionsTypes.SET_TAB,
@@ -18,6 +19,17 @@ export const fetchMenus = (token: string) => async (dispatch: Dispatch<Action>) 
       headers: {
         authorization: token
       }
+    });
+
+    const initialValues: any = {};
+
+    data.forEach((menu: Menu, index: number) =>
+      initialValues[`pratoPrincipal${index}`] = menu.pratoPrincipal
+    );
+
+    dispatch({
+      type: HomeActionsTypes.INIT_FORM,
+      value: initialValues
     });
 
     dispatch({

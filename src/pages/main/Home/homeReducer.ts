@@ -5,7 +5,8 @@ import Menu from "../../../shared/interfaces/Menu";
 export interface homeState {
     tabIndex: number;
     loading?: boolean;
-    menus: Menu[]; 
+    menus: Menu[];
+    initialFormValues?: any;
 }
 
 const INITIAL_STATE: homeState = {
@@ -20,6 +21,9 @@ const homeReducer = (state = INITIAL_STATE, action: Action) => {
 
         case HomeActionsTypes.FECTCH_MENUS:
             return { ...state, menus: action.value }
+
+        case HomeActionsTypes.INIT_FORM:
+            return { ...state, initialFormValues: action.value }
 
         case HomeActionsTypes.SENDING:
             return { ...state, loading: true };

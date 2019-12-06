@@ -4,10 +4,12 @@ import { reduxForm } from 'redux-form';
 import HomeFormTab from './homeFormTab';
 import { Button, Card, CardActions, CircularProgress } from '@material-ui/core';
 import Menu from '../../../shared/interfaces/Menu';
+import { connect } from 'react-redux';
+import { ReducersPool } from '../../../reducers';
 
-const HomeForm = (props: any) => {
+let HomeForm: any = (props: any) => {
   const { handleSubmit, onSubmit, tabIndex, setTab, loading, menus } = props;
-  
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {
@@ -51,4 +53,16 @@ const HomeForm = (props: any) => {
   );
 }
 
-export default reduxForm({ form: 'homeForm' })(HomeForm);
+const mapStateToProps = (state: ReducersPool) => {
+  const { homeReducer: { initialFormValues } } = state;
+
+  return ({
+    initialValues: initialFormValues
+  });
+};
+
+HomeForm = reduxForm({ form: 'homeForm' })(HomeForm);
+
+HomeForm = connect(mapStateToProps)(HomeForm);
+
+export default HomeForm;
