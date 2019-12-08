@@ -16,13 +16,14 @@ import ToolBar from './components/ToolBar';
 import './Main.css';
 import SideDrawer from './components/SideDrawer';
 import NotFoundPage from './NotFound/NotFoundPage';
+import { historyTesting } from '../../shared/testMocks/history';
 
 interface Props extends mainState {
   fetchUser: Function;
   closeSnack: Function;
   toggleDrawer: Function;
   redirect_to: Function;
-  history: History;
+  history: History | historyTesting;
 }
 
 class MainRouter extends PureComponent<Props> {

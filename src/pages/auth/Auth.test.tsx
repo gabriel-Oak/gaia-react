@@ -24,22 +24,22 @@ describe('Auth', () => {
   });
 
   it('should match snapshot', () => {
-    const app = shallow(
+    const page = shallow(
       <Provider store={store}>
         <AuthPage />
       </Provider>
     );
-    expect(app).toMatchSnapshot();
+    expect(page).toMatchSnapshot();
   });
-
+  
   describe('Auth form', () => {
     it('should match snapshot', () => {
-      const app = shallow(
+      const form = shallow(
         <Provider store={store}>
           <AuthForm />
         </Provider>
       );
-      expect(app).toMatchSnapshot();
+      expect(form).toMatchSnapshot();
     });
   });
 });

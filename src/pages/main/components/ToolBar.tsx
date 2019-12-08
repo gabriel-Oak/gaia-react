@@ -4,10 +4,11 @@ import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/co
 import MenuIcon from '@material-ui/icons/Menu';
 import { History } from 'history';
 import { clearSession } from '../../../shared/utils/auth';
+import { historyTesting } from '../../../shared/testMocks/history';
 
 interface Props {
   title: string;
-  history: History;
+  history: History | historyTesting;
   toggleDrawer: any;
 }
 

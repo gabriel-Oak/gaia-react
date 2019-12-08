@@ -5,6 +5,7 @@ import { ReducersPool } from '../../../reducers';
 import { connect } from 'react-redux';
 import { History } from 'history';
 import { Typography, Button } from '@material-ui/core';
+import { historyTesting } from '../../../shared/testMocks/history';
 
 interface Props {
   setTitle: Function;
@@ -14,7 +15,7 @@ interface Props {
     path: string,
     url: string
   };
-  history: History;
+  history: History | historyTesting;
 }
 
 class NotFoundPage extends PureComponent<Props> {
