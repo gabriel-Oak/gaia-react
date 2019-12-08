@@ -25,33 +25,6 @@ const RenderSelectField = (props: Props) => {
     ...rest
   } = props;
 
-  const renderOption = (option: any, index: number) => {
-    if (/Android|Mobi/i.test(navigator.userAgent)) {
-      return (
-        <option
-          value={option[model.value || 'value']}
-          key={index}
-          className={
-            option[model.value || 'value'] === input.value ? 'hidden' : ''
-          }
-        >
-          {option[model.name || 'name']}
-        </option>
-      );
-    }
-    return (
-      <MenuItem
-        value={option[model.value || 'value']}
-        key={index}
-        className={
-          option[model.value || 'value'] === input.value ? 'hidden' : ''
-        }
-      >
-        {option[model.name || 'name']}
-      </MenuItem>
-    );
-  }
-
   return (
     <>
       <Select
@@ -62,7 +35,15 @@ const RenderSelectField = (props: Props) => {
       >
         {
           options.map((option: any, index: number) => (
-            renderOption(option, index)
+            <MenuItem
+              value={option[model.value || 'value']}
+              key={index}
+              className={
+                option[model.value || 'value'] === input.value ? 'hidden' : ''
+              }
+            >
+              {option[model.name || 'name']}
+            </MenuItem>
           ))
         }
       </Select>
