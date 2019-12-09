@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound Home form should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Connect(ReduxForm)
+    menus={
+      Array [
+        Object {
+          "__v": 0,
+          "_id": "5d08c85f4d6ea30b43bf6d3b",
+          "data": "2019-11-04T22:16:00.000Z",
+          "guarnicao1": "Batata Frita",
+          "guarnicao2": "Ameixa da jamaica",
+          "opcao1": "Omelete",
+          "opcao2": "Bife",
+          "pratoPrincipal": "Bacon",
+          "salada": "Alface e tomate",
+          "sobremesa": "Maça",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5d08c85f4d6ea30b43bf6d3b",
+          "data": "2019-11-05T22:16:00.000Z",
+          "guarnicao1": "Batata Frita",
+          "guarnicao2": "Ameixa da jamaica",
+          "opcao1": "Omelete",
+          "opcao2": "Bife",
+          "pratoPrincipal": "Bacon",
+          "salada": "Alface e tomate",
+          "sobremesa": "Maça",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5d08c85f4d6ea30b43bf6d3b",
+          "data": "2019-11-06T22:16:00.000Z",
+          "guarnicao1": "Batata Frita",
+          "guarnicao2": "Ameixa da jamaica",
+          "opcao1": "Omelete",
+          "opcao2": "Bife",
+          "pratoPrincipal": "Bacon",
+          "salada": "Alface e tomate",
+          "sobremesa": "Maça",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5d08c85f4d6ea30b43bf6d3b",
+          "data": "2019-11-07T22:16:00.000Z",
+          "guarnicao1": "Batata Frita",
+          "guarnicao2": "Ameixa da jamaica",
+          "opcao1": "Omelete",
+          "opcao2": "Bife",
+          "pratoPrincipal": "Bacon",
+          "salada": "Alface e tomate",
+          "sobremesa": "Maça",
+        },
+        Object {
+          "__v": 0,
+          "_id": "5d08c85f4d6ea30b43bf6d3b",
+          "data": "2019-11-08T22:16:00.000Z",
+          "guarnicao1": "Batata Frita",
+          "guarnicao2": "Ameixa da jamaica",
+          "opcao1": "Omelete",
+          "opcao2": "Bife",
+          "pratoPrincipal": "Bacon",
+          "salada": "Alface e tomate",
+          "sobremesa": "Maça",
+        },
+      ]
+    }
+    onSubmit={[MockFunction]}
+  />
+</ContextProvider>
+`;
