@@ -24,6 +24,7 @@ interface Props extends mainState {
   toggleDrawer: Function;
   redirect_to: Function;
   history: History | historyTesting;
+  store?: any;
 }
 
 class MainRouter extends PureComponent<Props> {

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainRouter should match snapshot 1`] = `
+<div
+  className="Main"
+>
+  <ToolBar
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    title="Gaia"
+    toggleDrawer={[Function]}
+  />
+  <SideDrawer
+    open={false}
+    redirect_to={[Function]}
+    toggleDrawer={[Function]}
+  />
+  <BrowserRouter>
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(HomePage)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(NotFoundPage)",
+            "type": [Function],
+          }
+        }
+        path="**"
+      />
+    </Switch>
+  </BrowserRouter>
+  <Snack
+    closeSnack={[Function]}
+    open={false}
+  />
+</div>
+`;

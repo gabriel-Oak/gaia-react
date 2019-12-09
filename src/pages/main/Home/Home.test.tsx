@@ -10,6 +10,7 @@ import HomePage from './HomePage';
 import HomeForm from './HomeForm';
 import { menusMock } from '../../../shared/testMocks/menus';
 import { Provider } from 'react-redux';
+import { configureShallow } from '../../../shared/utils/testRender';
 
 describe('NotFound', () => {
   let store: any;
@@ -23,9 +24,9 @@ describe('NotFound', () => {
       applyMiddleware(thunk)
     );
 
-    page = shallow(
+    page = configureShallow(
       <HomePage store={store} />
-    ).childAt(0).dive();
+    )
   });
 
   it('Should match snapshot', () => {
