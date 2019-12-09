@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound Should render and match snapshot 1`] = `
-<Provider
+<NotFoundPage
+  history={
+    Object {
+      "goBack": [MockFunction],
+      "push": [Function],
+    }
+  }
+  match={
+    Object {
+      "isExact": true,
+      "params": Object {},
+      "path": "/",
+      "url": "/hgfd",
+    }
+  }
+  setTitle={[Function]}
   store={
     Object {
       "dispatch": [Function],
@@ -12,268 +27,233 @@ exports[`NotFound Should render and match snapshot 1`] = `
     }
   }
 >
-  <Connect(NotFoundPage)
-    history={
+  <main
+    className="NotFound Center-container"
+    style={
       Object {
-        "goBack": [MockFunction],
-        "push": [Function],
-      }
-    }
-    match={
-      Object {
-        "isExact": true,
-        "params": Object {},
-        "path": "/",
-        "url": "/hgfd",
+        "textAlign": "center",
       }
     }
   >
-    <NotFoundPage
-      history={
-        Object {
-          "goBack": [MockFunction],
-          "push": [Function],
-        }
-      }
-      match={
-        Object {
-          "isExact": true,
-          "params": Object {},
-          "path": "/",
-          "url": "/hgfd",
-        }
-      }
-      setTitle={[Function]}
+    <WithStyles(ForwardRef(Typography))
+      variant="h1"
     >
-      <main
-        className="NotFound Center-container"
-        style={
+      <ForwardRef(Typography)
+        classes={
           Object {
-            "textAlign": "center",
+            "alignCenter": "MuiTypography-alignCenter",
+            "alignJustify": "MuiTypography-alignJustify",
+            "alignLeft": "MuiTypography-alignLeft",
+            "alignRight": "MuiTypography-alignRight",
+            "body1": "MuiTypography-body1",
+            "body2": "MuiTypography-body2",
+            "button": "MuiTypography-button",
+            "caption": "MuiTypography-caption",
+            "colorError": "MuiTypography-colorError",
+            "colorInherit": "MuiTypography-colorInherit",
+            "colorPrimary": "MuiTypography-colorPrimary",
+            "colorSecondary": "MuiTypography-colorSecondary",
+            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+            "displayBlock": "MuiTypography-displayBlock",
+            "displayInline": "MuiTypography-displayInline",
+            "gutterBottom": "MuiTypography-gutterBottom",
+            "h1": "MuiTypography-h1",
+            "h2": "MuiTypography-h2",
+            "h3": "MuiTypography-h3",
+            "h4": "MuiTypography-h4",
+            "h5": "MuiTypography-h5",
+            "h6": "MuiTypography-h6",
+            "noWrap": "MuiTypography-noWrap",
+            "overline": "MuiTypography-overline",
+            "paragraph": "MuiTypography-paragraph",
+            "root": "MuiTypography-root",
+            "srOnly": "MuiTypography-srOnly",
+            "subtitle1": "MuiTypography-subtitle1",
+            "subtitle2": "MuiTypography-subtitle2",
           }
         }
+        variant="h1"
       >
-        <WithStyles(ForwardRef(Typography))
-          variant="h1"
+        <h1
+          className="MuiTypography-root MuiTypography-h1"
         >
-          <ForwardRef(Typography)
-            classes={
-              Object {
-                "alignCenter": "MuiTypography-alignCenter",
-                "alignJustify": "MuiTypography-alignJustify",
-                "alignLeft": "MuiTypography-alignLeft",
-                "alignRight": "MuiTypography-alignRight",
-                "body1": "MuiTypography-body1",
-                "body2": "MuiTypography-body2",
-                "button": "MuiTypography-button",
-                "caption": "MuiTypography-caption",
-                "colorError": "MuiTypography-colorError",
-                "colorInherit": "MuiTypography-colorInherit",
-                "colorPrimary": "MuiTypography-colorPrimary",
-                "colorSecondary": "MuiTypography-colorSecondary",
-                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                "displayBlock": "MuiTypography-displayBlock",
-                "displayInline": "MuiTypography-displayInline",
-                "gutterBottom": "MuiTypography-gutterBottom",
-                "h1": "MuiTypography-h1",
-                "h2": "MuiTypography-h2",
-                "h3": "MuiTypography-h3",
-                "h4": "MuiTypography-h4",
-                "h5": "MuiTypography-h5",
-                "h6": "MuiTypography-h6",
-                "noWrap": "MuiTypography-noWrap",
-                "overline": "MuiTypography-overline",
-                "paragraph": "MuiTypography-paragraph",
-                "root": "MuiTypography-root",
-                "srOnly": "MuiTypography-srOnly",
-                "subtitle1": "MuiTypography-subtitle1",
-                "subtitle2": "MuiTypography-subtitle2",
-              }
-            }
-            variant="h1"
-          >
-            <h1
-              className="MuiTypography-root MuiTypography-h1"
-            >
-               404 
-            </h1>
-          </ForwardRef(Typography)>
-        </WithStyles(ForwardRef(Typography))>
-        <WithStyles(ForwardRef(Typography))
-          gutterBottom={true}
-          variant="h3"
+           404 
+        </h1>
+      </ForwardRef(Typography)>
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      gutterBottom={true}
+      variant="h3"
+    >
+      <ForwardRef(Typography)
+        classes={
+          Object {
+            "alignCenter": "MuiTypography-alignCenter",
+            "alignJustify": "MuiTypography-alignJustify",
+            "alignLeft": "MuiTypography-alignLeft",
+            "alignRight": "MuiTypography-alignRight",
+            "body1": "MuiTypography-body1",
+            "body2": "MuiTypography-body2",
+            "button": "MuiTypography-button",
+            "caption": "MuiTypography-caption",
+            "colorError": "MuiTypography-colorError",
+            "colorInherit": "MuiTypography-colorInherit",
+            "colorPrimary": "MuiTypography-colorPrimary",
+            "colorSecondary": "MuiTypography-colorSecondary",
+            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+            "displayBlock": "MuiTypography-displayBlock",
+            "displayInline": "MuiTypography-displayInline",
+            "gutterBottom": "MuiTypography-gutterBottom",
+            "h1": "MuiTypography-h1",
+            "h2": "MuiTypography-h2",
+            "h3": "MuiTypography-h3",
+            "h4": "MuiTypography-h4",
+            "h5": "MuiTypography-h5",
+            "h6": "MuiTypography-h6",
+            "noWrap": "MuiTypography-noWrap",
+            "overline": "MuiTypography-overline",
+            "paragraph": "MuiTypography-paragraph",
+            "root": "MuiTypography-root",
+            "srOnly": "MuiTypography-srOnly",
+            "subtitle1": "MuiTypography-subtitle1",
+            "subtitle2": "MuiTypography-subtitle2",
+          }
+        }
+        gutterBottom={true}
+        variant="h3"
+      >
+        <h3
+          className="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
         >
-          <ForwardRef(Typography)
-            classes={
-              Object {
-                "alignCenter": "MuiTypography-alignCenter",
-                "alignJustify": "MuiTypography-alignJustify",
-                "alignLeft": "MuiTypography-alignLeft",
-                "alignRight": "MuiTypography-alignRight",
-                "body1": "MuiTypography-body1",
-                "body2": "MuiTypography-body2",
-                "button": "MuiTypography-button",
-                "caption": "MuiTypography-caption",
-                "colorError": "MuiTypography-colorError",
-                "colorInherit": "MuiTypography-colorInherit",
-                "colorPrimary": "MuiTypography-colorPrimary",
-                "colorSecondary": "MuiTypography-colorSecondary",
-                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                "displayBlock": "MuiTypography-displayBlock",
-                "displayInline": "MuiTypography-displayInline",
-                "gutterBottom": "MuiTypography-gutterBottom",
-                "h1": "MuiTypography-h1",
-                "h2": "MuiTypography-h2",
-                "h3": "MuiTypography-h3",
-                "h4": "MuiTypography-h4",
-                "h5": "MuiTypography-h5",
-                "h6": "MuiTypography-h6",
-                "noWrap": "MuiTypography-noWrap",
-                "overline": "MuiTypography-overline",
-                "paragraph": "MuiTypography-paragraph",
-                "root": "MuiTypography-root",
-                "srOnly": "MuiTypography-srOnly",
-                "subtitle1": "MuiTypography-subtitle1",
-                "subtitle2": "MuiTypography-subtitle2",
-              }
-            }
-            gutterBottom={true}
-            variant="h3"
-          >
-            <h3
-              className="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
-            >
-              /hgfd
-            </h3>
-          </ForwardRef(Typography)>
-        </WithStyles(ForwardRef(Typography))>
-        <WithStyles(ForwardRef(Button))
+          /hgfd
+        </h3>
+      </ForwardRef(Typography)>
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Button))
+      onClick={[Function]}
+      variant="contained"
+    >
+      <ForwardRef(Button)
+        classes={
+          Object {
+            "colorInherit": "MuiButton-colorInherit",
+            "contained": "MuiButton-contained",
+            "containedPrimary": "MuiButton-containedPrimary",
+            "containedSecondary": "MuiButton-containedSecondary",
+            "containedSizeLarge": "MuiButton-containedSizeLarge",
+            "containedSizeSmall": "MuiButton-containedSizeSmall",
+            "disabled": "Mui-disabled",
+            "endIcon": "MuiButton-endIcon",
+            "focusVisible": "Mui-focusVisible",
+            "fullWidth": "MuiButton-fullWidth",
+            "iconSizeLarge": "MuiButton-iconSizeLarge",
+            "iconSizeMedium": "MuiButton-iconSizeMedium",
+            "iconSizeSmall": "MuiButton-iconSizeSmall",
+            "label": "MuiButton-label",
+            "outlined": "MuiButton-outlined",
+            "outlinedPrimary": "MuiButton-outlinedPrimary",
+            "outlinedSecondary": "MuiButton-outlinedSecondary",
+            "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+            "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+            "root": "MuiButton-root",
+            "sizeLarge": "MuiButton-sizeLarge",
+            "sizeSmall": "MuiButton-sizeSmall",
+            "startIcon": "MuiButton-startIcon",
+            "text": "MuiButton-text",
+            "textPrimary": "MuiButton-textPrimary",
+            "textSecondary": "MuiButton-textSecondary",
+            "textSizeLarge": "MuiButton-textSizeLarge",
+            "textSizeSmall": "MuiButton-textSizeSmall",
+          }
+        }
+        onClick={[Function]}
+        variant="contained"
+      >
+        <WithStyles(ForwardRef(ButtonBase))
+          className="MuiButton-root MuiButton-contained"
+          component="button"
+          disabled={false}
+          focusRipple={true}
+          focusVisibleClassName="Mui-focusVisible"
           onClick={[Function]}
-          variant="contained"
+          type="button"
         >
-          <ForwardRef(Button)
+          <ForwardRef(ButtonBase)
+            className="MuiButton-root MuiButton-contained"
             classes={
               Object {
-                "colorInherit": "MuiButton-colorInherit",
-                "contained": "MuiButton-contained",
-                "containedPrimary": "MuiButton-containedPrimary",
-                "containedSecondary": "MuiButton-containedSecondary",
-                "containedSizeLarge": "MuiButton-containedSizeLarge",
-                "containedSizeSmall": "MuiButton-containedSizeSmall",
                 "disabled": "Mui-disabled",
-                "endIcon": "MuiButton-endIcon",
                 "focusVisible": "Mui-focusVisible",
-                "fullWidth": "MuiButton-fullWidth",
-                "iconSizeLarge": "MuiButton-iconSizeLarge",
-                "iconSizeMedium": "MuiButton-iconSizeMedium",
-                "iconSizeSmall": "MuiButton-iconSizeSmall",
-                "label": "MuiButton-label",
-                "outlined": "MuiButton-outlined",
-                "outlinedPrimary": "MuiButton-outlinedPrimary",
-                "outlinedSecondary": "MuiButton-outlinedSecondary",
-                "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                "root": "MuiButton-root",
-                "sizeLarge": "MuiButton-sizeLarge",
-                "sizeSmall": "MuiButton-sizeSmall",
-                "startIcon": "MuiButton-startIcon",
-                "text": "MuiButton-text",
-                "textPrimary": "MuiButton-textPrimary",
-                "textSecondary": "MuiButton-textSecondary",
-                "textSizeLarge": "MuiButton-textSizeLarge",
-                "textSizeSmall": "MuiButton-textSizeSmall",
+                "root": "MuiButtonBase-root",
               }
             }
+            component="button"
+            disabled={false}
+            focusRipple={true}
+            focusVisibleClassName="Mui-focusVisible"
             onClick={[Function]}
-            variant="contained"
+            type="button"
           >
-            <WithStyles(ForwardRef(ButtonBase))
-              className="MuiButton-root MuiButton-contained"
-              component="button"
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-contained"
               disabled={false}
-              focusRipple={true}
-              focusVisibleClassName="Mui-focusVisible"
+              onBlur={[Function]}
               onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
               type="button"
             >
-              <ForwardRef(ButtonBase)
-                className="MuiButton-root MuiButton-contained"
-                classes={
-                  Object {
-                    "disabled": "Mui-disabled",
-                    "focusVisible": "Mui-focusVisible",
-                    "root": "MuiButtonBase-root",
-                  }
-                }
-                component="button"
-                disabled={false}
-                focusRipple={true}
-                focusVisibleClassName="Mui-focusVisible"
-                onClick={[Function]}
-                type="button"
+              <span
+                className="MuiButton-label"
               >
-                <button
-                  className="MuiButtonBase-root MuiButton-root MuiButton-contained"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onDragLeave={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchMove={[Function]}
-                  onTouchStart={[Function]}
-                  tabIndex={0}
-                  type="button"
+                Voltar
+              </span>
+              <NoSsr>
+                <WithStyles(undefined)
+                  center={false}
                 >
-                  <span
-                    className="MuiButton-label"
+                  <ForwardRef(TouchRipple)
+                    center={false}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child",
+                        "childLeaving": "MuiTouchRipple-childLeaving",
+                        "childPulsate": "MuiTouchRipple-childPulsate",
+                        "ripple": "MuiTouchRipple-ripple",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible",
+                        "root": "MuiTouchRipple-root",
+                      }
+                    }
                   >
-                    Voltar
-                  </span>
-                  <NoSsr>
-                    <WithStyles(undefined)
-                      center={false}
+                    <span
+                      className="MuiTouchRipple-root"
                     >
-                      <ForwardRef(TouchRipple)
-                        center={false}
-                        classes={
-                          Object {
-                            "child": "MuiTouchRipple-child",
-                            "childLeaving": "MuiTouchRipple-childLeaving",
-                            "childPulsate": "MuiTouchRipple-childPulsate",
-                            "ripple": "MuiTouchRipple-ripple",
-                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                            "rippleVisible": "MuiTouchRipple-rippleVisible",
-                            "root": "MuiTouchRipple-root",
-                          }
-                        }
-                      >
-                        <span
-                          className="MuiTouchRipple-root"
-                        >
-                          <TransitionGroup
-                            childFactory={[Function]}
-                            component={null}
-                            exit={true}
-                          />
-                        </span>
-                      </ForwardRef(TouchRipple)>
-                    </WithStyles(undefined)>
-                  </NoSsr>
-                </button>
-              </ForwardRef(ButtonBase)>
-            </WithStyles(ForwardRef(ButtonBase))>
-          </ForwardRef(Button)>
-        </WithStyles(ForwardRef(Button))>
-      </main>
-    </NotFoundPage>
-  </Connect(NotFoundPage)>
-</Provider>
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component={null}
+                        exit={true}
+                      />
+                    </span>
+                  </ForwardRef(TouchRipple)>
+                </WithStyles(undefined)>
+              </NoSsr>
+            </button>
+          </ForwardRef(ButtonBase)>
+        </WithStyles(ForwardRef(ButtonBase))>
+      </ForwardRef(Button)>
+    </WithStyles(ForwardRef(Button))>
+  </main>
+</NotFoundPage>
 `;

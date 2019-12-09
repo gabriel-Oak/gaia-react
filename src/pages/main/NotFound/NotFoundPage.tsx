@@ -16,6 +16,7 @@ interface Props {
     url: string
   };
   history: History | historyTesting;
+  store?: any;
 }
 
 class NotFoundPage extends PureComponent<Props> {

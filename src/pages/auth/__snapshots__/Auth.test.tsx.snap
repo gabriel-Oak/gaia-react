@@ -1,86 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Auth Auth form should match snapshot 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
-      "subscription": Subscription {
-        "handleChangeWrapper": [Function],
-        "listeners": Object {
-          "notify": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-        "unsubscribe": null,
-      },
-    }
-  }
->
-  <ReduxForm
-    destroyOnUnmount={true}
-    enableReinitialize={false}
-    forceUnregisterOnUnmount={false}
-    form="auth"
-    getFormState={[Function]}
-    keepDirtyOnReinitialize={false}
-    persistentSubmitErrors={false}
-    pure={true}
-    shouldAsyncValidate={[Function]}
-    shouldError={[Function]}
-    shouldValidate={[Function]}
-    shouldWarn={[Function]}
-    submitAsSideEffect={false}
-    touchOnBlur={true}
-    touchOnChange={false}
-    updateUnregisteredFields={false}
-  />
-</ContextProvider>
+<ReduxForm
+  _reduxForm={null}
+  destroyOnUnmount={true}
+  enableReinitialize={false}
+  forceUnregisterOnUnmount={false}
+  form="auth"
+  getFormState={[Function]}
+  keepDirtyOnReinitialize={false}
+  onSubmit={[MockFunction]}
+  persistentSubmitErrors={false}
+  pure={true}
+  shouldAsyncValidate={[Function]}
+  shouldError={[Function]}
+  shouldValidate={[Function]}
+  shouldWarn={[Function]}
+  submitAsSideEffect={false}
+  touchOnBlur={true}
+  touchOnChange={false}
+  updateUnregisteredFields={false}
+/>
 `;
 
 exports[`Auth should match snapshot 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
-      "subscription": Subscription {
-        "handleChangeWrapper": [Function],
-        "listeners": Object {
-          "notify": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-        "unsubscribe": null,
-      },
-    }
-  }
+<main
+  className="Auth"
 >
-  <Connect(AuthPage) />
-</ContextProvider>
+  <article
+    className="Center-container s600"
+  >
+    <WithStyles(ForwardRef(Card))>
+      <WithStyles(ForwardRef(CardHeader))
+        title="Login"
+      />
+      <ReduxForm
+        auth={false}
+        closeSnack={[Function]}
+        destroyOnUnmount={true}
+        enableReinitialize={false}
+        forceUnregisterOnUnmount={false}
+        form="auth"
+        getFormState={[Function]}
+        keepDirtyOnReinitialize={false}
+        loading={false}
+        logIn={[Function]}
+        onSubmit={[Function]}
+        persistentSubmitErrors={false}
+        pure={true}
+        setTitle={[Function]}
+        shouldAsyncValidate={[Function]}
+        shouldError={[Function]}
+        shouldValidate={[Function]}
+        shouldWarn={[Function]}
+        snackbar={
+          Object {
+            "open": false,
+          }
+        }
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        submitAsSideEffect={false}
+        touchOnBlur={true}
+        touchOnChange={false}
+        updateUnregisteredFields={false}
+      />
+    </WithStyles(ForwardRef(Card))>
+  </article>
+  <Snack
+    closeSnack={[Function]}
+    open={false}
+  />
+</main>
 `;

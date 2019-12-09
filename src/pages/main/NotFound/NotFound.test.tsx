@@ -1,20 +1,18 @@
 import React from 'react';
 
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { createStore, applyMiddleware } from 'redux';
 import reducers from '../../../reducers';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
 import NotFoundPage from './NotFoundPage';
 import { matchMock, historyMock } from '../../../shared/testMocks/history';
-import { Button } from '@material-ui/core';
 
 describe('NotFound', () => {
   let store: any;
   let page: any;
 
-  const redirect = jest.fn(() => undefined);
+  const redirect = jest.fn();
 
   beforeEach(() => {
     store = createStore(
@@ -25,10 +23,12 @@ describe('NotFound', () => {
     historyMock.goBack = redirect;
 
     page = mount(
-      <Provider store={store}>
-        <NotFoundPage match={matchMock} history={historyMock} />
-      </Provider>
-    );
+      <NotFoundPage
+        match={matchMock}
+        history={historyMock}
+        store={store}
+      />
+    ).childAt(0);
   });
 
   it('Should render and match snapshot', () => {
@@ -36,7 +36,7 @@ describe('NotFound', () => {
   });
 
   it('should redirect in button click', () => {
-    page.find('button').simulate('click')
+    page.find('button').simulate('click');
     expect(redirect.mock.calls.length).toBe(1);
   });
 });

@@ -14,6 +14,7 @@ interface Props extends homeState {
   setTitle: Function;
   setTab: Function;
   fetchMenus: Function;
+  store?: any;
 }
 
 class HomePage extends PureComponent<Props> {

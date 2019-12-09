@@ -16,6 +16,7 @@ interface Props extends AuthState {
   setTitle: Function;
   closeSnack: Function;
   logIn: any;
+  store?: any;
 }
 
 class AuthPage extends PureComponent<Props> {

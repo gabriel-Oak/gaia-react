@@ -6,40 +6,59 @@ import { shallow } from 'enzyme';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from '../../../reducers';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
 import HomePage from './HomePage';
 import HomeForm from './HomeForm';
 import { menusMock } from '../../../shared/testMocks/menus';
+import { Provider } from 'react-redux';
 
 describe('NotFound', () => {
   let store: any;
+  let page: any;
+
+  const onSubmit = jest.fn();
 
   beforeEach(() => {
     store = createStore(
       reducers,
       applyMiddleware(thunk)
     );
+
+    page = shallow(
+      <HomePage store={store} />
+    ).childAt(0).dive();
   });
 
-  it('Should render', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(
-      <Provider store={store}>
-        <HomePage />
-      </Provider>, div);
-    ReactDOM.unmountComponentAtNode(div);
+  it('Should match snapshot', () => {
+    expect(page).toMatchSnapshot();
   });
 
   describe('Home form', () => {
-    it('should match snapshot', () => {
-      const onSubmit = jest.fn(() => { });
 
+    it('should match snapshot', () => {
       const form = shallow(
-        <Provider store={store}>
-          <HomeForm onSubmit={onSubmit} menus={menusMock} />
-        </Provider>
-      );
+        <HomeForm
+          onSubmit={onSubmit}
+          menus={menusMock}
+          store={store}
+        />
+      ).dive().dive().dive().dive();
+
       expect(form).toMatchSnapshot();
+    });
+
+    it('should render the form without crashing', () => {
+      const div = document.createElement('div');
+      ReactDOM.render(
+        <Provider store={store}>
+          <HomeForm
+            onSubmit={onSubmit}
+            menus={menusMock}
+            store={store}
+          />
+        </Provider>
+        , div
+      );
+      ReactDOM.unmountComponentAtNode(div);
     });
   });
 });
