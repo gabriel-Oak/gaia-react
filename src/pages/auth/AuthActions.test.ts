@@ -12,7 +12,7 @@ describe('Auth Actions', () => {
   });
 
   afterEach(() => {
-    moxios.install();
+    moxios.uninstall();
   });
 
 

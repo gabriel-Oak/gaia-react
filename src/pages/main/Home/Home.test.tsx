@@ -32,6 +32,15 @@ describe('NotFound', () => {
     expect(page).toMatchSnapshot();
   });
 
+  it('Should perform onSubmit()', () => {
+    const instance = page.instance();
+    const spy = jest.spyOn(instance, 'onSubmit');
+
+    instance.onSubmit({ pratoPrincipal0: 'Coxinha' });
+
+    expect(spy).toHaveBeenCalled();
+  });
+
   describe('Home form', () => {
 
     it('should match snapshot', () => {
@@ -58,6 +67,7 @@ describe('NotFound', () => {
         </Provider>
         , div
       );
+
       ReactDOM.unmountComponentAtNode(div);
     });
   });
