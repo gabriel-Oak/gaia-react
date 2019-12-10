@@ -28,7 +28,7 @@ class HomePage extends PureComponent<Props> {
   }
 
   onSubmit(event: any) {
-    console.log(event);
+    // console.log(event);
   }
 
   render(): ReactNode {
