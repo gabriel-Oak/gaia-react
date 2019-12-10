@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { MainActionsTypes } from "./mainActionsTypes";
 import { Dispatch } from "redux";
-import { AuthActionsTypes } from "../auth/authActionsTypes";
 import { api } from '../../enviroments/enviroments';
 import { History } from 'history';
 import { clearSession } from '../../shared/utils/auth';
@@ -24,19 +23,17 @@ export const fetchUser = (token: string, history: History) => async (dispatch: D
   } catch (e) {
     clearSession();
 
-    history.push('/login');
+    await history.push('/login');
 
-    setTimeout(() => {
-      dispatch({
-        type: AuthActionsTypes.FIRE_SNACK,
-        value: {
-          open: true,
-          type: 'error',
-          message: 'Não foi possivel autenticar, efetue login novamente!',
-          duration: 6000
-        }
-      });
-    }, 100);
+    dispatch({
+      type: MainActionsTypes.FIRE_SNACK,
+      value: {
+        open: true,
+        type: 'error',
+        message: 'Não foi possivel autenticar, efetue login novamente!',
+        duration: 6000
+      }
+    });
   }
 }
 

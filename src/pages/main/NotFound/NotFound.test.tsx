@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { createStore, applyMiddleware } from 'redux';
 import reducers from '../../../reducers';

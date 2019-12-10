@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { IconButton, List, ListItem, ListItemText, ListItemIcon, SwipeableDrawer } from '@material-ui/core';
-// import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 
