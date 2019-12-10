@@ -35,10 +35,15 @@ const WeekTabs = (props: Props) => {
         aria-label="week tabs"
         variant="fullWidth"
         scrollButtons="auto"
+
       >
         {
-          days.map((day, index) => (
-            <Tab label={day} key={index} />
+          days.map((day, i) => (
+            <Tab
+              label={day}
+              key={i}
+              className={`weektab${i}`}
+            />
           ))
         }
       </Tabs>

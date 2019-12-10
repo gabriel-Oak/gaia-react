@@ -1,0 +1,770 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekTabs shold match snapshot 1`] = `
+<WeekTabs
+  index={0}
+  onChange={[MockFunction]}
+>
+  <section
+    className="WeekTabs"
+  >
+    <WithStyles(ForwardRef(Tabs))
+      aria-label="week tabs"
+      indicatorColor="primary"
+      onChange={[Function]}
+      scrollButtons="auto"
+      textColor="primary"
+      value={0}
+      variant="fullWidth"
+    >
+      <ForwardRef(Tabs)
+        aria-label="week tabs"
+        classes={
+          Object {
+            "centered": "MuiTabs-centered",
+            "fixed": "MuiTabs-fixed",
+            "flexContainer": "MuiTabs-flexContainer",
+            "flexContainerVertical": "MuiTabs-flexContainerVertical",
+            "indicator": "MuiTabs-indicator",
+            "root": "MuiTabs-root",
+            "scrollButtons": "MuiTabs-scrollButtons",
+            "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
+            "scrollable": "MuiTabs-scrollable",
+            "scroller": "MuiTabs-scroller",
+            "vertical": "MuiTabs-vertical",
+          }
+        }
+        indicatorColor="primary"
+        onChange={[Function]}
+        scrollButtons="auto"
+        textColor="primary"
+        value={0}
+        variant="fullWidth"
+      >
+        <div
+          aria-label="week tabs"
+          className="MuiTabs-root"
+        >
+          <div
+            className="MuiTabs-scroller MuiTabs-fixed"
+            onScroll={[Function]}
+            style={
+              Object {
+                "marginBottom": null,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <div
+              className="MuiTabs-flexContainer"
+              role="tablist"
+            >
+              <WithStyles(ForwardRef(Tab))
+                className="weektab0"
+                fullWidth={true}
+                indicator={false}
+                key=".$0"
+                label="Segunda"
+                onChange={[Function]}
+                selected={true}
+                textColor="primary"
+                value={0}
+              >
+                <ForwardRef(Tab)
+                  className="weektab0"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "fullWidth": "MuiTab-fullWidth",
+                      "labelIcon": "MuiTab-labelIcon",
+                      "root": "MuiTab-root",
+                      "selected": "Mui-selected",
+                      "textColorInherit": "MuiTab-textColorInherit",
+                      "textColorPrimary": "MuiTab-textColorPrimary",
+                      "textColorSecondary": "MuiTab-textColorSecondary",
+                      "wrapped": "MuiTab-wrapped",
+                      "wrapper": "MuiTab-wrapper",
+                    }
+                  }
+                  fullWidth={true}
+                  indicator={false}
+                  label="Segunda"
+                  onChange={[Function]}
+                  selected={true}
+                  textColor="primary"
+                  value={0}
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-selected={true}
+                    className="MuiTab-root MuiTab-textColorPrimary weektab0 Mui-selected MuiTab-fullWidth"
+                    disabled={false}
+                    focusRipple={true}
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-selected={true}
+                      className="MuiTab-root MuiTab-textColorPrimary weektab0 Mui-selected MuiTab-fullWidth"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                      role="tab"
+                    >
+                      <button
+                        aria-selected={true}
+                        className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary weektab0 Mui-selected MuiTab-fullWidth"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        role="tab"
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiTab-wrapper"
+                        >
+                          Segunda
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Tab)>
+              </WithStyles(ForwardRef(Tab))>
+              <WithStyles(ForwardRef(Tab))
+                className="weektab1"
+                fullWidth={true}
+                indicator={false}
+                key=".$1"
+                label="Terça"
+                onChange={[Function]}
+                selected={false}
+                textColor="primary"
+                value={1}
+              >
+                <ForwardRef(Tab)
+                  className="weektab1"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "fullWidth": "MuiTab-fullWidth",
+                      "labelIcon": "MuiTab-labelIcon",
+                      "root": "MuiTab-root",
+                      "selected": "Mui-selected",
+                      "textColorInherit": "MuiTab-textColorInherit",
+                      "textColorPrimary": "MuiTab-textColorPrimary",
+                      "textColorSecondary": "MuiTab-textColorSecondary",
+                      "wrapped": "MuiTab-wrapped",
+                      "wrapper": "MuiTab-wrapper",
+                    }
+                  }
+                  fullWidth={true}
+                  indicator={false}
+                  label="Terça"
+                  onChange={[Function]}
+                  selected={false}
+                  textColor="primary"
+                  value={1}
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-selected={false}
+                    className="MuiTab-root MuiTab-textColorPrimary weektab1 MuiTab-fullWidth"
+                    disabled={false}
+                    focusRipple={true}
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-selected={false}
+                      className="MuiTab-root MuiTab-textColorPrimary weektab1 MuiTab-fullWidth"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                      role="tab"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary weektab1 MuiTab-fullWidth"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        role="tab"
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiTab-wrapper"
+                        >
+                          Terça
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Tab)>
+              </WithStyles(ForwardRef(Tab))>
+              <WithStyles(ForwardRef(Tab))
+                className="weektab2"
+                fullWidth={true}
+                indicator={false}
+                key=".$2"
+                label="Quarta"
+                onChange={[Function]}
+                selected={false}
+                textColor="primary"
+                value={2}
+              >
+                <ForwardRef(Tab)
+                  className="weektab2"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "fullWidth": "MuiTab-fullWidth",
+                      "labelIcon": "MuiTab-labelIcon",
+                      "root": "MuiTab-root",
+                      "selected": "Mui-selected",
+                      "textColorInherit": "MuiTab-textColorInherit",
+                      "textColorPrimary": "MuiTab-textColorPrimary",
+                      "textColorSecondary": "MuiTab-textColorSecondary",
+                      "wrapped": "MuiTab-wrapped",
+                      "wrapper": "MuiTab-wrapper",
+                    }
+                  }
+                  fullWidth={true}
+                  indicator={false}
+                  label="Quarta"
+                  onChange={[Function]}
+                  selected={false}
+                  textColor="primary"
+                  value={2}
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-selected={false}
+                    className="MuiTab-root MuiTab-textColorPrimary weektab2 MuiTab-fullWidth"
+                    disabled={false}
+                    focusRipple={true}
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-selected={false}
+                      className="MuiTab-root MuiTab-textColorPrimary weektab2 MuiTab-fullWidth"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                      role="tab"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary weektab2 MuiTab-fullWidth"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        role="tab"
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiTab-wrapper"
+                        >
+                          Quarta
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Tab)>
+              </WithStyles(ForwardRef(Tab))>
+              <WithStyles(ForwardRef(Tab))
+                className="weektab3"
+                fullWidth={true}
+                indicator={false}
+                key=".$3"
+                label="Quinta"
+                onChange={[Function]}
+                selected={false}
+                textColor="primary"
+                value={3}
+              >
+                <ForwardRef(Tab)
+                  className="weektab3"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "fullWidth": "MuiTab-fullWidth",
+                      "labelIcon": "MuiTab-labelIcon",
+                      "root": "MuiTab-root",
+                      "selected": "Mui-selected",
+                      "textColorInherit": "MuiTab-textColorInherit",
+                      "textColorPrimary": "MuiTab-textColorPrimary",
+                      "textColorSecondary": "MuiTab-textColorSecondary",
+                      "wrapped": "MuiTab-wrapped",
+                      "wrapper": "MuiTab-wrapper",
+                    }
+                  }
+                  fullWidth={true}
+                  indicator={false}
+                  label="Quinta"
+                  onChange={[Function]}
+                  selected={false}
+                  textColor="primary"
+                  value={3}
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-selected={false}
+                    className="MuiTab-root MuiTab-textColorPrimary weektab3 MuiTab-fullWidth"
+                    disabled={false}
+                    focusRipple={true}
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-selected={false}
+                      className="MuiTab-root MuiTab-textColorPrimary weektab3 MuiTab-fullWidth"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                      role="tab"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary weektab3 MuiTab-fullWidth"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        role="tab"
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiTab-wrapper"
+                        >
+                          Quinta
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Tab)>
+              </WithStyles(ForwardRef(Tab))>
+              <WithStyles(ForwardRef(Tab))
+                className="weektab4"
+                fullWidth={true}
+                indicator={false}
+                key=".$4"
+                label="Sexta"
+                onChange={[Function]}
+                selected={false}
+                textColor="primary"
+                value={4}
+              >
+                <ForwardRef(Tab)
+                  className="weektab4"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "fullWidth": "MuiTab-fullWidth",
+                      "labelIcon": "MuiTab-labelIcon",
+                      "root": "MuiTab-root",
+                      "selected": "Mui-selected",
+                      "textColorInherit": "MuiTab-textColorInherit",
+                      "textColorPrimary": "MuiTab-textColorPrimary",
+                      "textColorSecondary": "MuiTab-textColorSecondary",
+                      "wrapped": "MuiTab-wrapped",
+                      "wrapper": "MuiTab-wrapper",
+                    }
+                  }
+                  fullWidth={true}
+                  indicator={false}
+                  label="Sexta"
+                  onChange={[Function]}
+                  selected={false}
+                  textColor="primary"
+                  value={4}
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-selected={false}
+                    className="MuiTab-root MuiTab-textColorPrimary weektab4 MuiTab-fullWidth"
+                    disabled={false}
+                    focusRipple={true}
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-selected={false}
+                      className="MuiTab-root MuiTab-textColorPrimary weektab4 MuiTab-fullWidth"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                      role="tab"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary weektab4 MuiTab-fullWidth"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        role="tab"
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiTab-wrapper"
+                        >
+                          Sexta
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Tab)>
+              </WithStyles(ForwardRef(Tab))>
+            </div>
+            <WithStyles(ForwardRef(TabIndicator))
+              className="MuiTabs-indicator"
+              color="primary"
+              orientation="horizontal"
+              style={
+                Object {
+                  "left": 0,
+                  "width": 0,
+                }
+              }
+            >
+              <ForwardRef(TabIndicator)
+                className="MuiTabs-indicator"
+                classes={
+                  Object {
+                    "colorPrimary": "PrivateTabIndicator-colorPrimary-26",
+                    "colorSecondary": "PrivateTabIndicator-colorSecondary-27",
+                    "root": "PrivateTabIndicator-root-25",
+                    "vertical": "PrivateTabIndicator-vertical-28",
+                  }
+                }
+                color="primary"
+                orientation="horizontal"
+                style={
+                  Object {
+                    "left": 0,
+                    "width": 0,
+                  }
+                }
+              >
+                <span
+                  className="PrivateTabIndicator-root-25 PrivateTabIndicator-colorPrimary-26 MuiTabs-indicator"
+                  style={
+                    Object {
+                      "left": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </ForwardRef(TabIndicator)>
+            </WithStyles(ForwardRef(TabIndicator))>
+          </div>
+        </div>
+      </ForwardRef(Tabs)>
+    </WithStyles(ForwardRef(Tabs))>
+    <ReactSwipableView
+      animateHeight={false}
+      animateTransitions={true}
+      axis="x"
+      disableLazyLoading={false}
+      disabled={false}
+      enableMouseEvents={true}
+      hysteresis={0.6}
+      ignoreNativeScroll={false}
+      index={0}
+      onChangeIndex={[Function]}
+      resistance={false}
+      springConfig={
+        Object {
+          "delay": "0s",
+          "duration": "0.35s",
+          "easeFunction": "cubic-bezier(0.15, 0.3, 0.25, 1)",
+        }
+      }
+      threshold={5}
+    >
+      <div
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onScroll={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "overflowX": "hidden",
+          }
+        }
+      >
+        <div
+          className="react-swipeable-view-container"
+          style={
+            Object {
+              "WebkitFlexDirection": "row",
+              "WebkitTransition": "all 0s ease 0s",
+              "direction": "ltr",
+              "display": "flex",
+              "flexDirection": "row",
+              "height": null,
+              "transition": "all 0s ease 0s",
+              "willChange": "transform",
+            }
+          }
+        >
+          <div
+            aria-hidden={false}
+            data-swipeable="true"
+            key=".0"
+            style={
+              Object {
+                "WebkitFlexShrink": 0,
+                "flexShrink": 0,
+                "overflow": "auto",
+                "width": "100%",
+              }
+            }
+          >
+            <div>
+              panel 1
+            </div>
+          </div>
+        </div>
+      </div>
+    </ReactSwipableView>
+  </section>
+</WeekTabs>
+`;

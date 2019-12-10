@@ -43,7 +43,10 @@
     },
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/", "/src/shared/testMocks"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
