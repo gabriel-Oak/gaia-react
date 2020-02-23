@@ -13,7 +13,7 @@ export const logIn = (form: any) => async (dispatch: Dispatch<Action>) => {
     
     dispatch({ type: AuthActionsTypes.SENDED });
 
-    const { data: { token, user } } = await axios.post(`${api.user}/${form.user}`, form);
+    const { data: { token, user } } = await axios.post(api.session, form);
 
     setSession(token);
 

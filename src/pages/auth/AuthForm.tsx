@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Field, reduxForm } from 'redux-form';
-import { required } from '../../shared/validators/validators';
+import { required, isEmail } from '../../shared/validators/validators';
 import RenderTextField from '../../shared/components/renderTextField/renderTextField';
 
 import { Button, CardActions, CardContent, CircularProgress } from '@material-ui/core';
@@ -16,16 +16,16 @@ const AuthForm = (props: any) => {
 
       <CardContent className="field_wrapper">
         <Field
-          name="user"
-          label="Usuário"
+          name="email"
+          label="Email"
           variant="outlined"
           disabled={loading}
           component={RenderTextField}
-          validate={[required]}
+          validate={[required, isEmail]}
         />
 
         <Field
-          name="senha"
+          name="password"
           label="Senha"
           variant="outlined"
           type="password"

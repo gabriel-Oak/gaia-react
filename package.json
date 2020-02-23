@@ -22,6 +22,7 @@
     "redux": "^4.0.4",
     "redux-form": "^8.2.6",
     "redux-thunk": "^2.3.0",
+    "socket.io-client": "2.1.1",
     "typescript": "3.7.2"
   },
   "scripts": {
@@ -45,7 +46,8 @@
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "coveragePathIgnorePatterns": [
-      "/node_modules/", "/src/shared/testMocks"
+      "/node_modules/",
+      "/src/shared/testMocks"
     ]
   },
   "eslintConfig": {
