@@ -19,7 +19,12 @@ const SideDrawer = (props: Props) => {
       title: 'Home',
       icon: <HomeIcon />,
       url: '/'
-    }
+    },
+    {
+      title: 'Usuários',
+      icon: <HomeIcon />,
+      url: '/user'
+    },
   ];
 
   const navigate = (url: string) => {
