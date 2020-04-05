@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { History } from 'history';
-import { clearSession } from '../../../shared/utils/auth';
-import { historyTesting } from '../../../shared/testMocks/history';
+import { clearSession } from '../../../../shared/utils/auth';
+import { historyTesting } from '../../../../shared/testMocks/history';
+import useStyles from './styles';
 
 interface Props {
   title: string;
@@ -12,8 +13,9 @@ interface Props {
   toggleDrawer: any;
 }
 
-const ToolBar = (props: Props) => {
+const ToolBar: FC<Props> = (props: Props) => {
   const { title, history, toggleDrawer } = props;
+  const classes = useStyles();
 
   const logOut = () => {
     clearSession();
@@ -21,7 +23,7 @@ const ToolBar = (props: Props) => {
   }
 
   return (
-    <AppBar position="static" style={{zIndex: 1301}}>
+    <AppBar position="static" className={classes.root}>
       <Toolbar>
         <IconButton 
           edge="start" 

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { TextField } from '@material-ui/core'
+import useStyles from './styles';
 
 interface Props {
   input: any;
@@ -11,12 +12,14 @@ interface Props {
   }
 }
 
-const RenderTextField = (props: Props) => {
+const RenderTextField: FC<Props> = (props: Props) => {
   const {
     input,
     meta: { touched, error },
     ...rest
-  } = props
+  } = props;
+
+  const classes = useStyles();
 
   return (
     <TextField
@@ -24,7 +27,7 @@ const RenderTextField = (props: Props) => {
       {...rest}
       error={touched && !!error}
       helperText={touched && error}
-      className="Field"
+      className={classes.root}
     />
   );
 }

@@ -35,14 +35,12 @@ class HomePage extends PureComponent<Props> {
 
     return (
       <main className="Home">
-        <article className="Center-container-horizontal s800">
-        
+                
           <HomeForm
             {...this.props}
             onSubmit={this.onSubmit}
           />
 
-        </article>
       </main>
     )
   }

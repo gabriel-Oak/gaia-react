@@ -1,5 +1,5 @@
-import mainReducer from "./mainReducer";
-import { MainActionsTypes } from "./mainActionsTypes";
+import mainReducer from './mainReducer';
+import { MainActionsTypes } from './mainActionsTypes';
 
 describe('Main Reducer', () => {
   it('Shold fire snackbar', () => {

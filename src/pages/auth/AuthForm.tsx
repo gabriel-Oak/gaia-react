@@ -9,7 +9,7 @@ import { Button, CardActions, CardContent, CircularProgress } from '@material-ui
 import './Auth.css';
 
 const AuthForm = (props: any) => {
-  const { handleSubmit, onSubmit, loading } = props
+  const { handleSubmit, onSubmit, loading } = props;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

@@ -1,8 +1,17 @@
 import React from 'react';
 
-import { IconButton, List, ListItem, ListItemText, ListItemIcon, SwipeableDrawer } from '@material-ui/core';
+import {
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  SwipeableDrawer,
+} from '@material-ui/core';
+
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
+import PeopleIcon from '@material-ui/icons/People';
 
 
 interface Props {
@@ -22,8 +31,8 @@ const SideDrawer = (props: Props) => {
     },
     {
       title: 'Usuários',
-      icon: <HomeIcon />,
-      url: '/user'
+      icon: <PeopleIcon />,
+      url: '/users/new'
     },
   ];
 
