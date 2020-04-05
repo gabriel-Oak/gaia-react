@@ -11,7 +11,7 @@ export const fetchUser = (token: string, history: History) => async (dispatch: D
 
     const { data: { user } } = await axios.put(`${api.session}`, {}, {
       headers: {
-        Authorization: `Baerer ${token}`
+        Authorization: token
       }
     });
 

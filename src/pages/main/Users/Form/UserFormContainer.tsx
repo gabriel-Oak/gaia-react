@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import UserFormPage from './UserFormPage';
 import { ReducersPool } from '../../../../reducers';
 import { setTitle } from '../../mainActions';
-import { User } from '../../../../shared/interfaces/User';
+import { formValueSelector } from 'redux-form';
 
 interface Props {
   setTitle: Function;
+  password: String;
 };
 
 const UserFormContainer = (props: Props) => {
-  const { setTitle } = props;
+  const { setTitle, password } = props;
 
   useEffect(() => {
     setTitle('Novo usuário');
@@ -20,17 +21,27 @@ const UserFormContainer = (props: Props) => {
     console.log(newUser);
   }
 
+  const passMatch = (value: string | null) => (
+    value !== password
+    && 'As senhas não são iguais!'
+  );
+
   return (
     <UserFormPage
       {...props}
       onSubmit={onSubmit}
+      passMatch={passMatch}
     />
   );
 }
 
+const selector = formValueSelector('user');
 const mapStateToProps = (state: ReducersPool) => {
-  const { homeReducer } = state;
-  return homeReducer;
+  const { user: { form } } = state;
+  return {
+    ...form,
+    password: selector(state, 'password'),
+  };
 };
 
 const mapDispatchToProps = {

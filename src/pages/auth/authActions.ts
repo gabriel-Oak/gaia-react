@@ -15,7 +15,7 @@ export const logIn = (form: any) => async (dispatch: Dispatch<Action>) => {
 
     const { data: { token, user } } = await axios.post(api.session, form);
 
-    setSession(token);
+    setSession(`Bearer ${token}`);
 
     dispatch({
       type: MainActionsTypes.FETCH_USER,

@@ -7,6 +7,9 @@ const useStyles = makeStyles({
   actions: {
     display: 'flex',
     justifyContent: 'flex-end',
+  },
+  content: {
+    textAlign: 'right',
   }
 });
 

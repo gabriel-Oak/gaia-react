@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form, reduxForm, Field } from 'redux-form';
+import { Form, reduxForm, Field, InjectedFormProps } from 'redux-form';
 import {
   Card,
   Container,
@@ -11,9 +11,16 @@ import {
 import RenderTextField from '../../../../shared/components/renderTextField/renderTextField';
 import { required, isEmail } from '../../../../shared/validators/validators';
 import useStyles from './styles';
+import RenderCheckBox from '../../../../shared/components/RenderCheckBox';
 
-const UserFormPage: FC<any> = (props: any) => {
-  const { handleSubmit, onSubmit, loading } = props;
+interface Props {
+  loading?: boolean;
+  passMatch: Function;
+  onSubmit: Function;
+}
+
+const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
+  const { handleSubmit, onSubmit, loading, passMatch } = props;
   const classes = useStyles();
 
   return (
@@ -24,7 +31,7 @@ const UserFormPage: FC<any> = (props: any) => {
       >
         <Card>
           <CardHeader title="Novo usuário" />
-          <CardContent>
+          <CardContent classes={{ root: classes.content }}>
 
             <Field
               name="name"
@@ -61,13 +68,18 @@ const UserFormPage: FC<any> = (props: any) => {
               variant="outlined"
               disabled={loading}
               component={RenderTextField}
-              validate={[required]}
+              validate={[required, passMatch]}
+            />
+
+            <Field 
+              name="admin"
+              label="É administrador"
+              disabled={loading}
+              component={RenderCheckBox}
             />
 
           </CardContent>
-          <CardActions
-            classes={{ root: classes.actions }}
-          >
+          <CardActions classes={{ root: classes.actions }} >
 
             <Button
               variant="contained"
@@ -84,4 +96,4 @@ const UserFormPage: FC<any> = (props: any) => {
   );
 }
 
-export default reduxForm({ form: 'user' })(UserFormPage);
+export default reduxForm<any, Props>({ form: 'user' })(UserFormPage);
