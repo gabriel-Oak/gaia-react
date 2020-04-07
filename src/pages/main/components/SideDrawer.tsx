@@ -12,16 +12,18 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
+import { User } from '../../../shared/interfaces/User';
 
 
 interface Props {
   open: boolean
   toggleDrawer: any;
   redirect_to: Function;
+  user: User | { admin: boolean };
 }
 
 const SideDrawer = (props: Props) => {
-  const { open, toggleDrawer, redirect_to } = props
+  const { open, toggleDrawer, redirect_to, user } = props
 
   const list = [
     {
@@ -32,7 +34,8 @@ const SideDrawer = (props: Props) => {
     {
       title: 'Usuários',
       icon: <PeopleIcon />,
-      url: '/users/new'
+      url: '/users/new',
+      admin: true,
     },
   ];
 
@@ -62,16 +65,18 @@ const SideDrawer = (props: Props) => {
 
       <List>
         {
-          list.map((item, index) => (
-            <ListItem
-              button
-              key={index}
-              onClick={() => navigate(item.url)}
-            >
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText>{item.title}</ListItemText>
-            </ListItem>
-          ))
+          list
+            .filter(item => !item.admin ? true : user.admin)
+            .map((item, index) => (
+              <ListItem
+                button
+                key={index}
+                onClick={() => navigate(item.url)}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText>{item.title}</ListItemText>
+              </ListItem>
+            ))
         }
       </List>
     </SwipeableDrawer>

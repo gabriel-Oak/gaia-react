@@ -73,6 +73,7 @@ const MainRouter: FC<Props> = (props: Props) => {
         open={drawer}
         redirect_to={redirect_to}
         toggleDrawer={toggleDrawer}
+        user={user || { admin: false, }}
       />
 
       {
