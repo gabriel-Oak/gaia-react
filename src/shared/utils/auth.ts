@@ -6,7 +6,7 @@ interface GaiaSession {
 
 export const setSession = (token: string) => {
     const gaiaSession: GaiaSession = {
-        token,
+        token: `Bearer ${token}`,
         expiresIn: new Date().getTime() + 604800000
     }
 

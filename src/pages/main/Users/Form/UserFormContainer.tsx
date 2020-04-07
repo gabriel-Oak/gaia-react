@@ -4,21 +4,22 @@ import UserFormPage from './UserFormPage';
 import { ReducersPool } from '../../../../reducers';
 import { setTitle } from '../../mainActions';
 import { formValueSelector } from 'redux-form';
-
+import { create } from './actions';
 interface Props {
   setTitle: Function;
   password: String;
+  create: Function;
 };
 
 const UserFormContainer = (props: Props) => {
-  const { setTitle, password } = props;
+  const { setTitle, password, create } = props;
 
   useEffect(() => {
     setTitle('Novo usuário');
   }, [setTitle]);
 
   const onSubmit = (newUser: any) => {
-    console.log(newUser);
+    create(newUser);
   }
 
   const passMatch = (value: string | null) => (
@@ -46,6 +47,7 @@ const mapStateToProps = (state: ReducersPool) => {
 
 const mapDispatchToProps = {
   setTitle,
+  create,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserFormContainer);

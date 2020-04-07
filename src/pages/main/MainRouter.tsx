@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, } from 'react-router-dom'
 import { fetchUser, closeSnack, toggleDrawer, redirect_to } from './mainActions';
 
 import HomePage from './Home/HomePage'
@@ -10,8 +10,8 @@ import { getSession } from '../../shared/utils/auth';
 
 import Snack from '../../shared/components/snack/snack';
 import { CircularProgress, Container } from '@material-ui/core';
-import { History } from 'history';
 import ToolBar from './components/ToolBar';
+import { History } from 'history';
 
 import './Main.css';
 import SideDrawer from './components/SideDrawer';
@@ -29,6 +29,7 @@ interface Props extends mainState {
   store?: any;
 }
 
+
 const MainRouter: FC<Props> = (props: Props) => {
 
   const classes = useStyles();
@@ -37,12 +38,12 @@ const MainRouter: FC<Props> = (props: Props) => {
     closeSnack,
     user,
     fetchUser,
-    history,
     title,
     drawer,
     toggleDrawer,
     redirect,
-    redirect_to
+    redirect_to,
+    history
   } = props;
 
   const session = getSession();
@@ -77,17 +78,15 @@ const MainRouter: FC<Props> = (props: Props) => {
       {
         user
           ?
-          <Container 
-            maxWidth="md" 
+          <Container
+            maxWidth="md"
             className={classes.container}
           >
-            <BrowserRouter>
-              <Switch>
-                <Route path="/" exact component={HomePage} />
-                <Route path="/users/new" exact component={UserFormContainer} />
-                <Route path="**" component={NotFoundPage} />
-              </Switch>
-            </BrowserRouter>
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/users/new" exact component={UserFormContainer} />
+              <Route path="**" component={NotFoundPage} />
+            </Switch>
           </Container>
           :
           <div className="Center-container">

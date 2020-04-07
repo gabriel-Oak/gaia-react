@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { HomeActionsTypes } from "./homeActionsTypes";
-import { Dispatch } from "redux";
+import { HomeActionsTypes } from './homeActionsTypes';
+import { Dispatch } from 'redux';
 import { api } from '../../../enviroments/enviroments';
 import resolveError from '../../../shared/utils/resolveError';
 import Action from '../../../shared/interfaces/Action';
