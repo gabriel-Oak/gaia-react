@@ -10,7 +10,19 @@ const useStyles = makeStyles(({ breakpoints }) => ({
       zIndex: -1,
       boxShadow: 'none'
     }
-  }
+  },
+  username: {
+    textTransform: 'capitalize',
+    userSelect: 'none',
+    msUserSelect: 'none',
+    WebkitUserSelect: 'none',
+    KhtmlUserSelect: 'none',
+    MozUserSelect: 'none',
+    '&:hover': {
+      textDecoration: 'underline',
+      cursor: 'pointer',
+    }
+  },
 }));
 
 export default useStyles;
