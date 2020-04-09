@@ -13,12 +13,14 @@ import { CircularProgress, Container } from '@material-ui/core';
 import ToolBar from './components/ToolBar';
 import { History } from 'history';
 
-import './Main.css';
 import SideDrawer from './components/SideDrawer';
 import NotFoundPage from './NotFound/NotFoundPage';
 import { historyTesting } from '../../shared/testMocks/history';
 import UserFormContainer from './Users/Form/UserFormContainer';
+import ProfileContainer from './Profile/ProfileContainer';
+
 import useStyles from './styles';
+import './Main.css';
 
 interface Props extends mainState {
   fetchUser: Function;
@@ -86,6 +88,7 @@ const MainRouter: FC<Props> = (props: Props) => {
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/users/new" exact component={UserFormContainer} />
+              <Route path="/profile/edit" exact component={ProfileContainer} />
               <Route path="**" component={NotFoundPage} />
             </Switch>
           </Container>

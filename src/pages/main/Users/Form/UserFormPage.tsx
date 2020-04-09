@@ -17,10 +17,22 @@ interface Props {
   loading?: boolean;
   passMatch: Function;
   onSubmit: Function;
+  hideAdmin?: boolean;
+  title: string;
+  password?: string
 }
 
 const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
-  const { handleSubmit, onSubmit, loading, passMatch } = props;
+  const {
+    handleSubmit,
+    onSubmit,
+    loading,
+    passMatch,
+    hideAdmin,
+    title,
+    password,
+  } = props;
+
   const classes = useStyles();
 
   return (
@@ -30,7 +42,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
         className={classes.root}
       >
         <Card>
-          <CardHeader title="Novo usuário" />
+          <CardHeader title={title} />
           <CardContent classes={{ root: classes.content }}>
 
             <Field
@@ -58,7 +70,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
               variant="outlined"
               disabled={loading}
               component={RenderTextField}
-              validate={[required]}
+              validate={!hideAdmin && [required]}
             />
 
             <Field
@@ -66,17 +78,33 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
               name="confirmPassword"
               label="Confirme a senha"
               variant="outlined"
-              disabled={loading}
+              disabled={loading || (hideAdmin && !password)}
               component={RenderTextField}
-              validate={[required, passMatch]}
+              validate={(!hideAdmin || password) && [required, passMatch]}
             />
 
-            <Field 
-              name="admin"
-              label="É administrador"
+            {
+              hideAdmin && password &&
+              <Field
+              type="password"
+              name="oldPassword"
+              label="Informe a senha antiga"
+              variant="outlined"
               disabled={loading}
-              component={RenderCheckBox}
+              component={RenderTextField}
+              validate={[required]}
             />
+            }
+
+            {
+              !hideAdmin && 
+              <Field
+                name="admin"
+                label="É administrador"
+                disabled={loading}
+                component={RenderCheckBox}
+              />
+            }
 
           </CardContent>
           <CardActions classes={{ root: classes.actions }} >
@@ -86,7 +114,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
               color="primary"
               type="submit"
             >
-              Criar
+              Enviar
             </Button>
 
           </CardActions>

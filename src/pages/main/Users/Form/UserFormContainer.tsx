@@ -7,7 +7,7 @@ import { formValueSelector } from 'redux-form';
 import { create } from './actions';
 interface Props {
   setTitle: Function;
-  password: String;
+  password: string;
   create: Function;
 };
 
@@ -30,6 +30,8 @@ const UserFormContainer = (props: Props) => {
   return (
     <UserFormPage
       {...props}
+      password={password}
+      title="Novo usuário"
       onSubmit={onSubmit}
       passMatch={passMatch}
     />

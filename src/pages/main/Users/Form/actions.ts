@@ -6,7 +6,7 @@ import { HomeActionsTypes } from '../../Home/homeActionsTypes';
 import resolveError from '../../../../shared/utils/resolveError';
 import { getSession } from '../../../../shared/utils/auth';
 import { api } from '../../../../enviroments/enviroments';
-import { reset, initialize } from 'redux-form';
+import { reset } from 'redux-form';
 
 export const create = (user: User) => async (dispatch: Dispatch) => {
   dispatch({ type: types.CREATE_USER });

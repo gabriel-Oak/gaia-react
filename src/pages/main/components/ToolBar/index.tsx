@@ -46,6 +46,11 @@ const ToolBar: FC<Props> = (props: Props) => {
     setOpen(true);
   }
 
+  const handleEditProfile = () => {
+    handleClose();
+    history.push('/profile/edit');
+  }
+
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar>
@@ -82,7 +87,7 @@ const ToolBar: FC<Props> = (props: Props) => {
         onClose={handleClose}
       >
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleEditProfile}>
           <ListItemIcon>
             <CreateIcon />
           </ListItemIcon>

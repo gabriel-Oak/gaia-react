@@ -4,7 +4,7 @@ const useStyles = makeStyles(({ breakpoints }) => ({
   container: {
     padding: 0,
     [breakpoints.up('sm')]: {
-      marginTop: 80,
+      marginTop: 60,
       zIndex: 1,
     },
   }
