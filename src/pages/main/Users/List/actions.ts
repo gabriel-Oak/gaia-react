@@ -1,35 +1,25 @@
 import axios from 'axios';
-import types from './types';
-import { User } from '../../../../shared/interfaces/User';
 import { Dispatch } from 'redux';
+import types from './types';
+import { getSession } from '../../../../shared/utils/auth';
 import { HomeActionsTypes } from '../../Home/homeActionsTypes';
 import resolveError from '../../../../shared/utils/resolveError';
-import { getSession } from '../../../../shared/utils/auth';
 import { api } from '../../../../enviroments/enviroments';
-import { reset } from 'redux-form';
 
-export const create = (user: User) => async (dispatch: Dispatch) => {
-  dispatch({ type: types.CREATE_USER });
+export const getUsers = () => async (dispatch: Dispatch) => {
+  dispatch({ type: types.GET_USERS });
   try {
     const { token } = getSession();
-    await axios.post(api.user, user, {
+    const { data: { users } } = await axios.get(`${api.user}s`, {
       headers: {
         Authorization: token,
       }
     });
 
     dispatch({
-      type: HomeActionsTypes.FIRE_SNACK,
-      value: {
-        open: true,
-        type: 'success',
-        message: 'Usuário criado com sucesso!',
-        duration: 6000
-      }
-    });
-
-    dispatch(reset('user'));
-
+      type: types.GET_USERS_SUCCESS,
+      value: users,
+    })
   } catch (e) {
     dispatch({
       type: HomeActionsTypes.FIRE_SNACK,

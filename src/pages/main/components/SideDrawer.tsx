@@ -34,7 +34,7 @@ const SideDrawer = (props: Props) => {
     {
       title: 'Usuários',
       icon: <PeopleIcon />,
-      url: '/users/new',
+      url: '/users',
       admin: true,
     },
   ];

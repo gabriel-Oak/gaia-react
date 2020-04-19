@@ -9,7 +9,7 @@ import Action from '../../shared/interfaces/Action';
 export const fetchUser = (token: string, history: History) => async (dispatch: Dispatch<Action>) => {
   try {
 
-    const { data: { user } } = await axios.put(`${api.session}`, {}, {
+    const { data: { user } } = await axios.get(`${api.session}`, {
       headers: {
         Authorization: token
       }

@@ -21,6 +21,7 @@ import ProfileContainer from './Profile/ProfileContainer';
 
 import useStyles from './styles';
 import './Main.css';
+import UserListContainer from './Users/List/UserListContainer';
 
 interface Props extends mainState {
   fetchUser: Function;
@@ -87,6 +88,7 @@ const MainRouter: FC<Props> = (props: Props) => {
           >
             <Switch>
               <Route path="/" exact component={HomePage} />
+              <Route path="/users" exact component={UserListContainer} />
               <Route path="/users/new" exact component={UserFormContainer} />
               <Route path="/profile/edit" exact component={ProfileContainer} />
               <Route path="**" component={NotFoundPage} />
