@@ -55,9 +55,11 @@ const UserListPage: FC<Props> = (props: Props) => {
           </Typography>
 
           <div className={classes.actionsContainer}>
-            <IconButton onClick={() => onNew()}>
-              <AddIcon />
-            </IconButton>
+            <Tooltip title="Criar novo">
+              <IconButton onClick={() => onNew()}>
+                <AddIcon />
+              </IconButton>
+            </Tooltip>
           </div>
         </Toolbar>
 
