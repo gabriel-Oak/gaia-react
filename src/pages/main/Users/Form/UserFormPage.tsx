@@ -6,7 +6,8 @@ import {
   CardHeader,
   CardContent,
   Button,
-  CardActions
+  CardActions,
+  LinearProgress
 } from '@material-ui/core';
 import RenderTextField from '../../../../shared/components/renderTextField/renderTextField';
 import { required, isEmail } from '../../../../shared/validators/validators';
@@ -20,6 +21,7 @@ interface Props {
   hideAdmin?: boolean;
   title: string;
   password?: string
+  isEdit?: boolean
 }
 
 const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
@@ -31,6 +33,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
     hideAdmin,
     title,
     password,
+    isEdit,
   } = props;
 
   const classes = useStyles();
@@ -42,6 +45,9 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
         className={classes.root}
       >
         <Card>
+          {
+            loading && <LinearProgress color="secondary" />
+          }
           <CardHeader title={title} />
           <CardContent classes={{ root: classes.content }}>
 
@@ -63,41 +69,48 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
               validate={[required, isEmail]}
             />
 
-            <Field
-              type="password"
-              name="password"
-              label="Senha"
-              variant="outlined"
-              disabled={loading}
-              component={RenderTextField}
-              validate={!hideAdmin && [required]}
-            />
+            {
+              !isEdit &&
+              <Field
+                type="password"
+                name="password"
+                label="Senha"
+                variant="outlined"
+                disabled={loading}
+                component={RenderTextField}
+                validate={!hideAdmin && [required]}
+              />
+            }
 
-            <Field
-              type="password"
-              name="confirmPassword"
-              label="Confirme a senha"
-              variant="outlined"
-              disabled={loading || (hideAdmin && !password)}
-              component={RenderTextField}
-              validate={(!hideAdmin || password) && [required, passMatch]}
-            />
+            {
+              !isEdit &&
+              <Field
+                type="password"
+                name="confirmPassword"
+                label="Confirme a senha"
+                variant="outlined"
+                disabled={loading || (hideAdmin && !password)}
+                component={RenderTextField}
+                validate={(!hideAdmin || password) && [required, passMatch]}
+              />
+            }
+
 
             {
               hideAdmin && password &&
               <Field
-              type="password"
-              name="oldPassword"
-              label="Informe a senha antiga"
-              variant="outlined"
-              disabled={loading}
-              component={RenderTextField}
-              validate={[required]}
-            />
+                type="password"
+                name="oldPassword"
+                label="Informe a senha antiga"
+                variant="outlined"
+                disabled={loading}
+                component={RenderTextField}
+                validate={[required]}
+              />
             }
 
             {
-              !hideAdmin && 
+              !hideAdmin &&
               <Field
                 name="admin"
                 label="É administrador"

@@ -12,6 +12,8 @@ const INITIAL_STATE: UserFormState = {
 const form = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case types.CREATE_USER:
+    case types.GET_USER:
+    case types.UPDATE_USER:
       return { ...state, loading: true };
     case types.COMPLETE:
       return { ...state, loading: false }

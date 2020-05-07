@@ -3,4 +3,5 @@ export interface User {
     email: string;
     name: string;
     user: string;
+    id?: number;
 }

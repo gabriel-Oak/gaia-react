@@ -11,6 +11,7 @@ interface Props {
   getUsers: Function;
   loading: boolean;
   users: any[];
+  destroy: Function;
 }
 
 const UserListContainer: FC<Props> = (props: Props) => {
@@ -19,6 +20,7 @@ const UserListContainer: FC<Props> = (props: Props) => {
     getUsers,
     loading,
     users,
+    destroy,
   } = props;
 
   useEffect(() => {
@@ -27,6 +29,8 @@ const UserListContainer: FC<Props> = (props: Props) => {
   }, [setTitle, getUsers]);
 
   const handleNew = () => history.push('/users/new');
+  const handleEdit = (id: number) => history.push(`/users/${id}`);
+  const handleDestroy = (id: number) => destroy(id);
 
   return (
     <UserListPage
@@ -34,6 +38,8 @@ const UserListContainer: FC<Props> = (props: Props) => {
       loading={loading}
       users={users}
       onNew={handleNew}
+      onEdit={handleEdit}
+      onDestroy={handleDestroy}
     />
   );
 }

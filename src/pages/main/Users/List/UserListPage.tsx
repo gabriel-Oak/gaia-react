@@ -11,8 +11,10 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Tooltip,
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import { Create, Delete } from '@material-ui/icons';
 
 import useStyles from './styles';
 
@@ -21,6 +23,8 @@ interface Props {
   loading: boolean;
   users: any[];
   onNew: Function;
+  onEdit: Function;
+  onDestroy: Function;
 }
 
 const UserListPage: FC<Props> = (props: Props) => {
@@ -29,6 +33,8 @@ const UserListPage: FC<Props> = (props: Props) => {
     loading,
     users,
     onNew,
+    onEdit,
+    onDestroy,
   } = props;
 
   const classes = useStyles();
@@ -60,10 +66,11 @@ const UserListPage: FC<Props> = (props: Props) => {
             <TableRow>
               <TableCell colSpan={1}>
                 Nome
-            </TableCell>
+              </TableCell>
+
               <TableCell colSpan={2}>
                 Email
-            </TableCell>
+              </TableCell>
             </TableRow>
           </TableHead>
 
@@ -77,6 +84,30 @@ const UserListPage: FC<Props> = (props: Props) => {
 
                   <TableCell>
                     {user.email}
+                  </TableCell>
+
+                  <TableCell>
+                    <Tooltip title="Editar usuário">
+                      <span>
+                        <IconButton
+                          onClick={() => onEdit(user.id)}
+                          disabled={loading}
+                        >
+                          <Create />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
+
+                    <Tooltip title="Excluir usuário">
+                      <span>
+                        <IconButton
+                          onClick={() => onDestroy(user.id)}
+                          disabled={loading}
+                        >
+                          <Delete />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
                   </TableCell>
                 </TableRow>
               ))
