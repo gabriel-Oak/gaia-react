@@ -37,6 +37,12 @@ const SideDrawer = (props: Props) => {
       url: '/users',
       admin: true,
     },
+    {
+      title: 'Menus',
+      icon: <PeopleIcon />,
+      url: '/menus',
+      admin: true,
+    },
   ];
 
   const navigate = (url: string) => {
