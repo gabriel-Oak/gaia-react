@@ -3,10 +3,12 @@ import Action from '../../../../shared/interfaces/Action';
 
 export interface MenuFormState {
   loading: boolean;
+  menus: any[];
 }
 
 const INITIAL_STATE: MenuFormState = {
   loading: false,
+  menus: [],
 }
 
 const form = (state = INITIAL_STATE, action: Action) => {
@@ -16,6 +18,8 @@ const form = (state = INITIAL_STATE, action: Action) => {
       return { ...state, loading: true };
     case types.COMPLETE:
       return { ...state, loading: false }
+    case types.GET_MENU_SUCCESS:
+      return { ...state, ...action.value }
     default:
       return state;
   }

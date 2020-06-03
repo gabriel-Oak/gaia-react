@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Form, reduxForm, Field, InjectedFormProps } from 'redux-form';
 import {
   Card,
@@ -7,39 +7,39 @@ import {
   CardContent,
   Button,
   CardActions,
-  LinearProgress
+  LinearProgress,
+  Box
 } from '@material-ui/core';
-import RenderTextField from '../../../../shared/components/renderTextField/renderTextField';
 import WeekTabs from '../../../../shared/components/WeekTabs/WeekTabs';
+import MenuForm from './MenuForm';
 
 // import useStyles from './styles';
 
 interface Props {
   loading?: boolean;
+  menus: any[]
 }
 
-const MenusFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
+const MenusFormPage: FC<Props> = (props: any) => {
   const {
-    handleSubmit,
-    onSubmit,
-    loading,
-    passMatch,
-    hideAdmin,
-    title,
-    password,
-    isEdit,
+    menus
   } = props;
+  console.log(menus);
 
-  // const classes = useStyles();
+  const [currentTab, setTab] = useState(0);
 
   return (
-    <Card>
+    <Box maxWidth="800px" margin="auto">
+      <Card>
 
-      <WeekTabs index={0} onChange={() => { }}>
-
-      </WeekTabs>
-    </Card >
+        <WeekTabs index={currentTab} onChange={setTab}>
+          {menus.map((menu: any) => (
+            <MenuForm key={menu.id} menu={menu} />
+          ))}
+        </WeekTabs>
+      </Card >
+    </Box>
   );
 }
 
-export default reduxForm<any, Props>({ form: 'user' })(MenusFormPage);
+export default MenusFormPage;
