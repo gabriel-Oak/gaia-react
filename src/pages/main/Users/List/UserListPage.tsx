@@ -12,6 +12,7 @@ import {
   Typography,
   IconButton,
   Tooltip,
+  Box,
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import { Create, Delete } from '@material-ui/icons';
@@ -84,32 +85,35 @@ const UserListPage: FC<Props> = (props: Props) => {
                     {user.name}
                   </TableCell>
 
-                  <TableCell>
+                  <TableCell >
                     {user.email}
                   </TableCell>
 
                   <TableCell>
-                    <Tooltip title="Editar usuário">
-                      <span>
-                        <IconButton
-                          onClick={() => onEdit(user.id)}
-                          disabled={loading}
-                        >
-                          <Create />
-                        </IconButton>
-                      </span>
-                    </Tooltip>
+                    <Box textAlign="right">
+                      <Tooltip title="Editar usuário">
+                        <span>
+                          <IconButton
+                            onClick={() => onEdit(user.id)}
+                            disabled={loading}
+                            color="primary"
+                          >
+                            <Create />
+                          </IconButton>
+                        </span>
+                      </Tooltip>
 
-                    <Tooltip title="Excluir usuário">
-                      <span>
-                        <IconButton
-                          onClick={() => onDestroy(user.id)}
-                          disabled={loading}
-                        >
-                          <Delete />
-                        </IconButton>
-                      </span>
-                    </Tooltip>
+                      <Tooltip title="Excluir usuário">
+                        <span>
+                          <IconButton
+                            onClick={() => onDestroy(user.id)}
+                            disabled={loading}
+                          >
+                            <Delete style={{ color: '#f44336' }} />
+                          </IconButton>
+                        </span>
+                      </Tooltip>
+                    </Box>
                   </TableCell>
                 </TableRow>
               ))

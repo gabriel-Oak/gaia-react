@@ -1,12 +1,6 @@
 import React, { FC, useState } from 'react';
-import { Form, reduxForm, Field, InjectedFormProps } from 'redux-form';
 import {
   Card,
-  Container,
-  CardHeader,
-  CardContent,
-  Button,
-  CardActions,
   LinearProgress,
   Box
 } from '@material-ui/core';
@@ -17,12 +11,13 @@ import MenuForm from './MenuForm';
 
 interface Props {
   loading?: boolean;
-  menus: any[]
+  menus: any[];
+  saveMenu: Function;
 }
 
 const MenusFormPage: FC<Props> = (props: any) => {
   const {
-    menus
+    menus, saveMenu, loading
   } = props;
   console.log(menus);
 
@@ -31,10 +26,10 @@ const MenusFormPage: FC<Props> = (props: any) => {
   return (
     <Box maxWidth="800px" margin="auto">
       <Card>
-
+        {loading && <LinearProgress />}
         <WeekTabs index={currentTab} onChange={setTab}>
           {menus.map((menu: any) => (
-            <MenuForm key={menu.id} menu={menu} />
+            <MenuForm key={menu.id} menu={menu} onSubmit={saveMenu} />
           ))}
         </WeekTabs>
       </Card >

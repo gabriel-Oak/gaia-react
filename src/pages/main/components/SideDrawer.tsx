@@ -12,6 +12,7 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { User } from '../../../shared/interfaces/User';
 
 
@@ -39,7 +40,7 @@ const SideDrawer = (props: Props) => {
     },
     {
       title: 'Menus',
-      icon: <PeopleIcon />,
+      icon: <MenuBookIcon />,
       url: '/menus',
       admin: true,
     },

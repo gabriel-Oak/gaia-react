@@ -9,25 +9,35 @@ import * as actions from './actions';
 interface Props {
   setTitle: Function;
   getMenus: Function;
+  getDishes: Function;
   menus: any[];
+  dishes: any[];
+  saveMenu: Function;
+  loading: boolean;
 };
 
 const MenusFormContainer = (props: Props) => {
   const {
     setTitle,
     getMenus,
-    menus
+    getDishes,
+    menus,
+    saveMenu,
+    loading
   } = props;
 
   useEffect(() => {
     setTitle('Cardapios');
     getMenus();
-  }, [setTitle, getMenus]);
+    getDishes();
+  }, [setTitle, getMenus, getDishes]);
 
 
   return (
     <MenusFormPage
       menus={menus}
+      saveMenu={saveMenu}
+      loading={loading}
     />
   );
 }
