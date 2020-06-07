@@ -14,14 +14,30 @@ export const getMenus = () => async (dispatch: Dispatch) => {
       headers: {
         authorization: token
       }
-    })
+    });
+
+    const menus = data.map(({ id, date, dishes }: any) => ({
+      id,
+      date,
+      '1-pratoPrincipal': (dishes.find(({ type }: any) => type.id === 1) || {}).name || '',
+      '5-opcao1': (dishes.filter(({ type }: any) => type.id === 5)[0] || {}).name || '',
+      '5-opcao2': (dishes.filter(({ type }: any) => type.id === 5)[1] || {}).name || '',
+      '2-guarnicao1': (dishes.filter(({ type }: any) => type.id === 2)[0] || {}).name || '',
+      '2-guarnicao2': (dishes.filter(({ type }: any) => type.id === 2)[1] || {}).name || '',
+      '3-salada1': (dishes.filter(({ type }: any) => type.id === 3)[0] || {}).name || '',
+      '3-salada2': (dishes.filter(({ type }: any) => type.id === 3)[1] || {}).name || '',
+      '4-sobremesa': (dishes.find(({ type }: any) => type.id === 4) || {}).name || '',
+    }));
+
     dispatch({
       type: types.GET_MENU_SUCCESS,
       value: {
-        menus: data
+        menus
       }
     });
   } catch (e) {
+    console.log(e);
+
     dispatch({
       type: HomeActionsTypes.FIRE_SNACK,
       value: {
@@ -66,7 +82,7 @@ export const getDishes = () => async (dispatch: Dispatch) => {
       }
     });
   } finally {
-    dispatch({ type: types.COMPLETE })
+    dispatch({ type: types.COMPLETE });
   }
 }
 

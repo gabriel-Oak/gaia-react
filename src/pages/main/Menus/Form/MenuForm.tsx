@@ -12,24 +12,16 @@ const MenuForm: React.FC<Props> = ({
   menu,
   onSubmit
 }) => {
-  const [form, setForm]: any[] = useState({
-    "1-pratoPrincipal": '',
-    "5-opcao1": '',
-    "5-opcao2": '',
-    "2-guarnicao1": '',
-    "2-guarnicao2": '',
-    "3-salada1": '',
-    "3-salada2": '',
-    "4-sobremesa": ''
-  });
-  console.log(menu);
+  const [form, setForm]: any[] = useState(menu);
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    const dishes = Object.keys(form).map(key => ({
-      name: form[key],
-      type: +key.substring(0, 1)
-    }));
+    const dishes = Object.keys(form)
+      .filter(key => !['date', 'id'].includes(key))
+      .map(key => ({
+        name: form[key],
+        type: +key.substring(0, 1)
+      }));
     onSubmit({
       ...menu,
       dishes

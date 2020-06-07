@@ -5,7 +5,6 @@ import { ReducersPool } from '../../../../reducers';
 import { setTitle } from '../../mainActions';
 
 import * as actions from './actions';
-// import { History } from 'history';
 interface Props {
   setTitle: Function;
   getMenus: Function;

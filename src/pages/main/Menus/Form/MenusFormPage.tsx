@@ -7,8 +7,6 @@ import {
 import WeekTabs from '../../../../shared/components/WeekTabs/WeekTabs';
 import MenuForm from './MenuForm';
 
-// import useStyles from './styles';
-
 interface Props {
   loading?: boolean;
   menus: any[];
@@ -19,7 +17,6 @@ const MenusFormPage: FC<Props> = (props: any) => {
   const {
     menus, saveMenu, loading
   } = props;
-  console.log(menus);
 
   const [currentTab, setTab] = useState(0);
 
