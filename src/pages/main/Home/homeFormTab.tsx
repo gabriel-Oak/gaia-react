@@ -1,65 +1,67 @@
 import React from 'react'
 import { Field } from 'redux-form';
-import { CardContent, List, ListItem, Checkbox } from '@material-ui/core';
+import { CardContent, List, ListItem, Checkbox, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import Menu from '../../../shared/interfaces/Menu';
 import RenderSelectField from '../../../shared/components/renderSelectField/renderSelectField';
 
 interface Props {
   name: string;
   loading?: boolean;
-  menu: Menu;
+  menu: any;
 }
 
 const HomeFormTab = (props: Props) => {
   const { name, loading, menu } = props;
 
   return (
-    <CardContent className="Home_form_tab">
+    <div className="Home_form_tab">
 
-      <List>
+      <List disablePadding dense>
 
-        <ListItem className="Home_form_tab_ListItem">
+        <ListItem className="Home_form_tab_ListItem" dense>
           <span>Prato Principal</span>
 
-          <Field
-            name={name}
-            label="Prato Principal"
-            component={RenderSelectField}
-            disabled={loading}
-            options={[
-              { name: menu.pratoPrincipal },
-              { name: menu.opcao1 },
-              { name: menu.opcao2 }
-            ]}
-            model={{ value: 'name' }}
-          />
+          <Select
+            onChange={() => { }}
+            value={10}
+          >
+            <MenuItem value={10}>{menu.pratoPrincipal}</MenuItem>
+            <MenuItem value={20}>{menu.opcao1}</MenuItem>
+            <MenuItem value={30}>{menu.opcao2}</MenuItem>
+          </Select>
         </ListItem>
 
-        <ListItem className="Home_form_tab_ListItem">
+        <ListItem className="Home_form_tab_ListItem" dense>
           <span>Guarnição 1</span>
 
           <span>{menu.guarnicao1}</span>
         </ListItem>
 
-        <ListItem className="Home_form_tab_ListItem">
+        <ListItem className="Home_form_tab_ListItem" dense>
           <span>Guarnição 2</span>
 
           <span>{menu.guarnicao2}</span>
         </ListItem>
 
-        <ListItem className="Home_form_tab_ListItem">
-          <span>Salada</span>
+        <ListItem className="Home_form_tab_ListItem" dense>
+          <span>Salada 1</span>
 
-          <span>{menu.salada}</span>
+          <span>{menu.salada1}</span>
         </ListItem>
 
-        <ListItem className="Home_form_tab_ListItem">
+        <ListItem className="Home_form_tab_ListItem" dense>
+          <span>Salada 2</span>
+
+          <span>{menu.salada2}</span>
+        </ListItem>
+
+        <ListItem className="Home_form_tab_ListItem" dense>
           <span>Sobremesa</span>
 
           <span>{menu.sobremesa}</span>
         </ListItem>
 
-        <ListItem className="Home_form_tab_ListItem">
+        <ListItem className="Home_form_tab_ListItem" dense>
           <span>Vou almoçar fora</span>
 
           <Checkbox />
@@ -67,7 +69,7 @@ const HomeFormTab = (props: Props) => {
 
       </List>
 
-    </CardContent>
+    </div>
   );
 }
 

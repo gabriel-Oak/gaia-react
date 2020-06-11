@@ -21,20 +21,22 @@ export const fetchMenus = (token: string) => async (dispatch: Dispatch<Action>) 
       }
     });
 
-    const initialValues: any = {};
-
-    data.forEach((menu: Menu, index: number) =>
-      initialValues[`pratoPrincipal${index}`] = menu.pratoPrincipal
-    );
-
-    dispatch({
-      type: HomeActionsTypes.INIT_FORM,
-      value: initialValues
-    });
+    const menus = data.map(({ id, date, dishes }: any) => ({
+      id,
+      date,
+      'pratoPrincipal': (dishes.find(({ type }: any) => type.id === 1) || {}).name || '',
+      'opcao1': (dishes.filter(({ type }: any) => type.id === 5)[0] || {}).name || '',
+      'opcao2': (dishes.filter(({ type }: any) => type.id === 5)[1] || {}).name || '',
+      'guarnicao1': (dishes.filter(({ type }: any) => type.id === 2)[0] || {}).name || '',
+      'guarnicao2': (dishes.filter(({ type }: any) => type.id === 2)[1] || {}).name || '',
+      'salada1': (dishes.filter(({ type }: any) => type.id === 3)[0] || {}).name || '',
+      'salada2': (dishes.filter(({ type }: any) => type.id === 3)[1] || {}).name || '',
+      'sobremesa': (dishes.find(({ type }: any) => type.id === 4) || {}).name || '',
+    }));
 
     dispatch({
       type: HomeActionsTypes.FECTCH_MENUS,
-      value: data
+      value: menus
     });
 
   } catch (e) {

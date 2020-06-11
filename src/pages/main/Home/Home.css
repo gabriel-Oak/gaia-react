@@ -24,8 +24,8 @@
   min-height: 17px;
 }
 
-.Home_form_tab_ListItem .MuiInput-root  {
-    min-width: 200px;
+.Home_form_tab_ListItem .MuiInput-root {
+  min-width: 200px;
 }
 
 @media screen and (max-width: 480px) {

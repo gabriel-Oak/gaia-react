@@ -35,18 +35,6 @@ let HomeForm: any = (props: any) => {
               }
 
             </WeekTabs>
-
-            <CardActions className="button-container">
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                disabled={loading}
-              >
-                Trocar
-              </Button>
-            </CardActions>
-
           </Card>
       }
     </form>
