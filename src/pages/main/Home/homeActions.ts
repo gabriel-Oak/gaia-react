@@ -75,6 +75,16 @@ export const exchangeDish = (body: any) => async (dispatch: any) => {
         authorization: token
       }
     });
+    dispatch({
+      type: HomeActionsTypes.FIRE_SNACK,
+      value: {
+        open: true,
+        type: 'success',
+        message: 'Troca realizada com sucesso!',
+        duration: 6000
+      }
+    });
+
     dispatch({ type: HomeActionsTypes.COMPLETE })
     dispatch(fetchMenus(token));
   } catch (e) {

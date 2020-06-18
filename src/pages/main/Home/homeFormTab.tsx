@@ -22,10 +22,10 @@ const HomeFormTab = (props: Props) => {
   };
 
   const handleCheck = () => {
-    setValue(1);
+    setValue(value !== 1 ? 1 : menu.pratoPrincipal.id);
     exchangeDish({
       menuId: menu.id,
-      dishId: 1
+      dishId: value !== 1 ? 1 : menu.pratoPrincipal.id
     })
   };
 
@@ -35,7 +35,7 @@ const HomeFormTab = (props: Props) => {
       <List disablePadding dense>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Prato Principal</span>
+          <div>Prato Principal</div>
 
           <Select
             onChange={handleChange}
@@ -64,39 +64,39 @@ const HomeFormTab = (props: Props) => {
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Guarnição 1</span>
+          <div>Guarnição 1</div>
 
-          <span>{menu.guarnicao1.name}</span>
+          <div>{menu.guarnicao1.name}</div>
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Guarnição 2</span>
+          <div>Guarnição 2</div>
 
-          <span>{menu.guarnicao2.name}</span>
+          <div>{menu.guarnicao2.name}</div>
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Salada 1</span>
+          <div>Salada 1</div>
 
-          <span>{menu.salada1.name}</span>
+          <div>{menu.salada1.name}</div>
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Salada 2</span>
+          <div>Salada 2</div>
 
-          <span>{menu.salada2.name}</span>
+          <div>{menu.salada2.name}</div>
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Sobremesa</span>
+          <div>Sobremesa</div>
 
-          <span>{menu.sobremesa.name}</span>
+          <div>{menu.sobremesa.name}</div>
         </ListItem>
 
         <ListItem className="Home_form_tab_ListItem" dense>
-          <span>Vou almoçar fora</span>
+          <div>Vou almoçar fora</div>
 
-          <Checkbox onClick={handleCheck} checked={value === 1} />
+          <Checkbox onClick={handleCheck} checked={value === 1} color="primary" />
         </ListItem>
 
       </List>
