@@ -7,6 +7,7 @@ import mainReducer, { mainState } from './pages/main/mainReducer';
 import user, { userState } from './pages/main/Users/reducer';
 import profile, { profileState } from './pages/main/Profile/reducer';
 import menu, { menuState } from './pages/main/Menus/reducer';
+import exchanges, { ExchangesState } from './pages/main/Exchanges/reducer';
 
 export interface ReducersPool {
   authReducer: AuthState;
@@ -15,6 +16,7 @@ export interface ReducersPool {
   profile: profileState;
   menu: menuState;
   user: userState;
+  exchanges: ExchangesState;
   form: Object;
 }
 
@@ -26,4 +28,5 @@ export default combineReducers({
   menu,
   profile,
   user,
+  exchanges,
 });

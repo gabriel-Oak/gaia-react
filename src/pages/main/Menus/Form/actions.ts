@@ -36,8 +36,6 @@ export const getMenus = () => async (dispatch: Dispatch) => {
       }
     });
   } catch (e) {
-    console.log(e);
-
     dispatch({
       type: HomeActionsTypes.FIRE_SNACK,
       value: {

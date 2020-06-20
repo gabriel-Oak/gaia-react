@@ -23,6 +23,7 @@ import useStyles from './styles';
 import './Main.css';
 import UserListContainer from './Users/List/UserListContainer';
 import MenusFormContainer from './Menus/Form/MenusFormContainer';
+import ExchangesContainer from './Exchanges/ExchangesContainer';
 
 interface Props extends mainState {
   fetchUser: Function;
@@ -94,6 +95,7 @@ const MainRouter: FC<Props> = (props: Props) => {
               <Route path="/users/:userId" exact component={UserFormContainer} />
               <Route path="/profile/edit" exact component={ProfileContainer} />
               <Route path="/menus/" exact component={MenusFormContainer} />
+              <Route path="/trocas" exact component={ExchangesContainer} />
               <Route path="**" component={NotFoundPage} />
             </Switch>
           </Container>

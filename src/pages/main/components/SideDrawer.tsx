@@ -13,6 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+import SyncIcon from '@material-ui/icons/Sync';
 import { User } from '../../../shared/interfaces/User';
 
 
@@ -42,6 +43,12 @@ const SideDrawer = (props: Props) => {
       title: 'Menus',
       icon: <MenuBookIcon />,
       url: '/menus',
+      admin: true,
+    },
+    {
+      title: 'Trocas',
+      icon: <SyncIcon />,
+      url: '/trocas',
       admin: true,
     },
   ];
