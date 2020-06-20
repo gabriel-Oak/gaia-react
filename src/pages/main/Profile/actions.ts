@@ -8,7 +8,7 @@ import { api } from '../../../enviroments/enviroments';
 import { HomeActionsTypes } from '../Home/homeActionsTypes';
 import { history } from '../../../AppRouter';
 import resolveError from '../../../shared/utils/resolveError';
-
+import { fetchUser } from '../mainActions';
 export const initializeForm = () => (dispatch: Dispatch, getState: Function) => {
   const { mainReducer: { user } } = getState();
   dispatch(initialize('user', {
@@ -17,8 +17,8 @@ export const initializeForm = () => (dispatch: Dispatch, getState: Function) => 
   }));
 }
 
-export const update = (user: User) => async (dispatch: Dispatch) => {
-  dispatch({type: types.UPDATE});
+export const update = (user: User) => async (dispatch: any) => {
+  dispatch({ type: types.UPDATE });
   try {
     const { token } = getSession();
     await axios.put(`${api.user}`, user, {
@@ -37,6 +37,7 @@ export const update = (user: User) => async (dispatch: Dispatch) => {
       }
     });
 
+    dispatch(fetchUser(token, history));
     history.push('/');
 
   } catch (e) {

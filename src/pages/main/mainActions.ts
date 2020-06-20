@@ -6,7 +6,7 @@ import { History } from 'history';
 import { clearSession } from '../../shared/utils/auth';
 import Action from '../../shared/interfaces/Action';
 
-export const fetchUser = (token: string, history: History) => async (dispatch: Dispatch<Action>) => {
+export const fetchUser = (token: string | null, history: History) => async (dispatch: Dispatch<Action>) => {
   try {
 
     const { data: { user } } = await axios.get(`${api.session}`, {
