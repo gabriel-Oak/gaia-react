@@ -91,7 +91,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
                 variant="outlined"
                 disabled={loading || (hideAdmin && !password)}
                 component={RenderTextField}
-                validate={(!hideAdmin || password) && [required, passMatch]}
+                validate={(!hideAdmin || password) ? [required, passMatch] : []}
               />
             }
 
