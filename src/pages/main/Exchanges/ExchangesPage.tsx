@@ -31,7 +31,7 @@ const ExchangesPage: React.FC<Props> = (props) => {
                   id="panel1a-header"
                 >
                   <Box flexBasis="33.33%">
-                    <Typography>{menu.exchange1.name} {i === currentTab ? 'undefined' : 'false'}</Typography>
+                    <Typography>{menu.exchange1.name}</Typography>
                   </Box>
 
                   <Typography>
@@ -39,13 +39,15 @@ const ExchangesPage: React.FC<Props> = (props) => {
                   </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
+                  <Box display="flex" width="100%" flexDirection="column">
 
-                  {menu.exchange1.exchanges.map((exchange: any, index: number) => (
-                    <Box className={classes.paper} key={index}>
-                      {exchange.name}
-                    </Box>
-                  ))}
+                    {menu.exchange1.exchanges.map((exchange: any, index: number) => (
+                      <Box className={classes.paper} key={index}>
+                        {exchange.name}
+                      </Box>
+                    ))}
 
+                  </Box>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -66,13 +68,15 @@ const ExchangesPage: React.FC<Props> = (props) => {
                   </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
+                  <Box display="flex" width="100%" flexDirection="column">
 
-                  {menu.exchange2.exchanges.map((exchange: any, index: number) => (
-                    <Box className={classes.paper} key={index}>
-                      {exchange.name}
-                    </Box>
-                  ))}
+                    {menu.exchange2.exchanges.map((exchange: any, index: number) => (
+                      <Box className={classes.paper} key={index}>
+                        {exchange.name}
+                      </Box>
+                    ))}
 
+                  </Box>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
 
@@ -93,14 +97,15 @@ const ExchangesPage: React.FC<Props> = (props) => {
                   </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
+                  <Box display="flex" width="100%" flexDirection="column">
 
-                  {menu.out.exchanges.map((exchange: any, index: number) => (
-                    <Box className={classes.paper} key={index}>
-                      {exchange.name}
-                    </Box>
-                  ))}
+                    {menu.out.exchanges.map((exchange: any, index: number) => (
+                      <Box className={classes.paper} key={index}>
+                        {exchange.name}
+                      </Box>
+                    ))}
 
-
+                  </Box>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             </CardContent>
