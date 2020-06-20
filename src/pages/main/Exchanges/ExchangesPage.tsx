@@ -13,7 +13,6 @@ const ExchangesPage: React.FC<Props> = (props) => {
   const { loading, menus } = props;
   const [currentTab, setTab] = useState(0);
   const classes = useStyles();
-  console.log(currentTab);
 
   return (
     <Box maxWidth="800px" margin="auto">
