@@ -11,7 +11,6 @@ interface Props {
 const HomeFormTab = (props: Props) => {
   const { loading, menu, exchangeDish } = props;
   const [value, setValue] = useState(menu.exchange || menu.pratoPrincipal.id);
-  console.log(menu);
 
   const handleChange = ({ target }: any) => {
     setValue(target.value);

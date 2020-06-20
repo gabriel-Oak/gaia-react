@@ -35,7 +35,7 @@ const ToolBar: FC<Props> = (props: Props) => {
 
   const logOut = () => {
     clearSession();
-    history.push('/login');
+    window.location.reload();
   }
 
   const handleClose = () => {
