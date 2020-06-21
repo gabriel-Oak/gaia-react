@@ -7,12 +7,15 @@ import {
   CardContent,
   Button,
   CardActions,
-  LinearProgress
+  LinearProgress,
+  IconButton
 } from '@material-ui/core';
 import RenderTextField from '../../../../shared/components/renderTextField/renderTextField';
 import { required, isEmail } from '../../../../shared/validators/validators';
 import useStyles from './styles';
 import RenderCheckBox from '../../../../shared/components/RenderCheckBox';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { history } from '../../../../AppRouter';
 
 interface Props {
   loading?: boolean;
@@ -42,14 +45,18 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Container
         maxWidth="xs"
-        className={classes.root}
+        className={classes.root1}
       >
         <Card>
           {
             loading && <LinearProgress color="secondary" />
           }
-          <CardHeader title={title} />
-          <CardContent classes={{ root: classes.content }}>
+          <CardHeader
+            title={title}
+            classes={classes}
+            action={<IconButton onClick={() => history.goBack()}><ArrowBackIcon /></IconButton>}
+          />
+          <CardContent classes={{ root: classes.content1 }}>
 
             <Field
               name="name"
@@ -120,7 +127,7 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
             }
 
           </CardContent>
-          <CardActions classes={{ root: classes.actions }} >
+          <CardActions classes={{ root: classes.actions1 }} >
 
             <Button
               variant="contained"

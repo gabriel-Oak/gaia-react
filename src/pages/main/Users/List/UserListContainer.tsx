@@ -29,7 +29,7 @@ const UserListContainer: FC<Props> = (props: Props) => {
   }, [setTitle, getUsers]);
 
   const handleNew = () => history.push('/users/new');
-  const handleEdit = (id: number) => history.push(`/users/${id}`);
+  const handleEdit = (id: number) => history.push(`/users/${id}/edit`);
   const handleDestroy = (id: number) => destroy(id);
 
   return (

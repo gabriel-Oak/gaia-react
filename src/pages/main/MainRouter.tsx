@@ -90,12 +90,16 @@ const MainRouter: FC<Props> = (props: Props) => {
           >
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/users" exact component={UserListContainer} />
-              <Route path="/users/new" exact component={UserFormContainer} />
-              <Route path="/users/:userId" exact component={UserFormContainer} />
-              <Route path="/profile/edit" exact component={ProfileContainer} />
-              <Route path="/menus/" exact component={MenusFormContainer} />
-              <Route path="/trocas" exact component={ExchangesContainer} />
+              {user.admin && (
+                <>
+                  <Route path="/users" exact component={UserListContainer} />
+                  <Route path="/users/new" exact component={UserFormContainer} />
+                  <Route path="/users/:userId/edit" exact component={UserFormContainer} />
+                  <Route path="/profile/edit" exact component={ProfileContainer} />
+                  <Route path="/menus/" exact component={MenusFormContainer} />
+                  <Route path="/trocas" exact component={ExchangesContainer} />
+                </>
+              )}
               <Route path="**" component={NotFoundPage} />
             </Switch>
           </Container>

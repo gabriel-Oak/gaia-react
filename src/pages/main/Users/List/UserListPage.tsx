@@ -42,7 +42,7 @@ const UserListPage: FC<Props> = (props: Props) => {
 
   return (
     <Container
-      className={classes.root}
+      className={classes.root1}
       maxWidth="sm"
     >
       <Card>

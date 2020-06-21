@@ -1,15 +1,22 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
-  root: {
+  root1: {
     padding: 0,
   },
-  actions: {
+  actions1: {
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  content: {
+  content1: {
     textAlign: 'right',
+  },
+  root: {
+    flexDirection: 'row-reverse',
+  },
+  action: {
+    marginRight: 20,
+    marginTop: 0
   }
 });
 

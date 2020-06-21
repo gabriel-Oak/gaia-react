@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  root: {
+  root1: {
     padding: 0,
   },
   toolbar: {
