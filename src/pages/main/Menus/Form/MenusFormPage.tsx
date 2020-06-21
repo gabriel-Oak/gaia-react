@@ -26,7 +26,7 @@ const MenusFormPage: FC<Props> = (props: any) => {
         {loading && <LinearProgress />}
         <WeekTabs index={currentTab} onChange={setTab}>
           {menus.map((menu: any) => (
-            <MenuForm key={menu.id} menu={menu} onSubmit={saveMenu} />
+            <MenuForm key={menu.id} menu={menu} onSubmit={saveMenu} loading={loading} />
           ))}
         </WeekTabs>
       </Card >

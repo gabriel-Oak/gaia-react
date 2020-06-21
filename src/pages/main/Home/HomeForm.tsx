@@ -24,17 +24,15 @@ let HomeForm: any = (props: any) => {
             {loading && <LinearProgress color="secondary" />}
             <WeekTabs index={tabIndex} onChange={setTab}>
 
-              {
-                menus.map((menu: Menu, index: number) => (
-                  <HomeFormTab
-                    name={`pratoPrincipal${index}`}
-                    menu={menu}
-                    loading={loading}
-                    key={index}
-                    exchangeDish={exchangeDish}
-                  />
-                ))
-              }
+              {menus.map((menu: Menu, index: number) => (
+                <HomeFormTab
+                  name={`pratoPrincipal${index}`}
+                  menu={menu}
+                  loading={loading}
+                  key={index}
+                  exchangeDish={exchangeDish}
+                />
+              ))}
 
             </WeekTabs>
           </Card>

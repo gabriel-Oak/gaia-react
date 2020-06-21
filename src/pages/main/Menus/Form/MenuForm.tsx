@@ -1,16 +1,18 @@
 import React, { SyntheticEvent, useState } from 'react';
 import {
-  CardContent, TextField, Grid, Box, Button, CardActions
+  CardContent, TextField, Grid, Box, Button, CardActions, CircularProgress
 } from '@material-ui/core';
 
 interface Props {
-  menu: any
-  onSubmit: Function
+  menu: any;
+  onSubmit: Function;
+  loading: boolean;
 }
 
 const MenuForm: React.FC<Props> = ({
   menu,
-  onSubmit
+  onSubmit,
+  loading
 }) => {
   const [form, setForm]: any[] = useState(menu);
 
@@ -41,6 +43,7 @@ const MenuForm: React.FC<Props> = ({
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['1-pratoPrincipal']}
               name="1-pratoPrincipal"
@@ -53,6 +56,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['5-opcao1']}
               name="5-opcao1"
@@ -65,6 +69,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['5-opcao2']}
               name="5-opcao2"
@@ -77,6 +82,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['2-guarnicao1']}
               name="2-guarnicao1"
@@ -89,6 +95,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['2-guarnicao2']}
               name="2-guarnicao2"
@@ -101,6 +108,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['3-salada1']}
               name="3-salada1"
@@ -113,6 +121,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['3-salada2']}
               name="3-salada2"
@@ -125,6 +134,7 @@ const MenuForm: React.FC<Props> = ({
 
           <Grid item xs={12} md={6}>
             <TextField
+              disabled={loading}
               onChange={handleChange}
               value={form['4-sobremesa']}
               name="4-sobremesa"
@@ -138,8 +148,14 @@ const MenuForm: React.FC<Props> = ({
       </CardContent>
       <CardActions>
         <Box ml="auto">
-          <Button color="primary" variant="contained" type="submit">
-            Salvar
+          <Button color="primary" variant="contained" type="submit" disabled={loading}>
+            {loading
+              ? (
+                <CircularProgress size={24} />
+              ) : (
+                'Salvar'
+              )
+            }
           </Button>
         </Box>
       </CardActions>

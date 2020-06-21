@@ -29,10 +29,6 @@ describe('NotFound', () => {
     )
   });
 
-  it('Should match snapshot', () => {
-    expect(page).toMatchSnapshot();
-  });
-
   it('Should perform onSubmit()', () => {
     const instance = page.instance();
     const spy = jest.spyOn(instance, 'onSubmit');

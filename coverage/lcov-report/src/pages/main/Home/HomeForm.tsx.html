@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>21/21</span>
+        <span class='fraction'>23/23</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>17/17</span>
       </div>
     </div>
     <p class="quiet">
@@ -104,17 +104,7 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -122,14 +112,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,22 +147,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,59 +158,49 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
 import WeekTabs from '../../../shared/components/WeekTabs/WeekTabs';
 import { reduxForm } from 'redux-form';
 import HomeFormTab from './homeFormTab';
-import { Button, Card, CardActions, CircularProgress } from '@material-ui/core';
+import { Button, Card, CardActions, CircularProgress, LinearProgress } from '@material-ui/core';
 import Menu from '../../../shared/interfaces/Menu';
 import { connect } from 'react-redux';
 import { ReducersPool } from '../../../reducers';
+import { exchangeDish } from './homeActions';
 &nbsp;
 let HomeForm: any = (props: any) =&gt; {
-  const { handleSubmit, onSubmit, tabIndex, setTab, loading, menus } = props;
+  const {
+    handleSubmit, onSubmit, tabIndex, setTab, loading, menus, exchangeDish,
+  } = props;
 &nbsp;
   return (
     &lt;form onSubmit={handleSubmit(onSubmit)}&gt;
-      {
-        loading &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!menus.length </span>?
-&nbsp;
-<span class="branch-0 cbranch-no" title="branch not covered" >          &lt;div className="Center-container"&gt;</span>
-            &lt;CircularProgress size={80} /&gt;
-          &lt;/div&gt; :
-&nbsp;
+      {loading &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!menus.length </span>? (
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;div className="Center-container"&gt;</span>
+          &lt;CircularProgress size={80} /&gt;
+        &lt;/div&gt;
+      ) : (
           &lt;Card&gt;
-&nbsp;
+            {loading &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;LinearProgress color="secondary" /&gt;}</span>
             &lt;WeekTabs index={tabIndex} onChange={setTab}&gt;
 &nbsp;
-              {
-                menus.map((menu: Menu, index: number) =&gt; (
-                  &lt;HomeFormTab
-                    name={`pratoPrincipal${index}`}
-                    menu={menu}
-                    loading={loading}
-                    key={index}
-                  /&gt;
-                ))
-              }
+              {menus.map((menu: Menu, index: number) =&gt; (
+                &lt;HomeFormTab
+                  name={`pratoPrincipal${index}`}
+                  menu={menu}
+                  loading={loading}
+                  key={index}
+                  exchangeDish={exchangeDish}
+                /&gt;
+              ))}
 &nbsp;
             &lt;/WeekTabs&gt;
-&nbsp;
-            &lt;CardActions className="button-container"&gt;
-              &lt;Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                disabled={loading}
-              &gt;
-                Trocar
-              &lt;/Button&gt;
-            &lt;/CardActions&gt;
-&nbsp;
           &lt;/Card&gt;
-      }
+        )}
     &lt;/form&gt;
   );
 }
@@ -247,7 +215,9 @@ const mapStateToProps = (state: ReducersPool) =&gt; {
 &nbsp;
 HomeForm = reduxForm({ form: 'homeForm' })(HomeForm);
 &nbsp;
-HomeForm = connect(mapStateToProps)(HomeForm);
+HomeForm = connect(mapStateToProps, {
+  exchangeDish
+})(HomeForm);
 &nbsp;
 export default HomeForm;
 &nbsp;</pre></td></tr>
@@ -256,7 +226,7 @@ export default HomeForm;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 10 2019 17:42:51 GMT-0200 (GMT-02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 21 2020 15:19:33 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>

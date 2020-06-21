@@ -64,7 +64,7 @@ const UserListPage: FC<Props> = (props: Props) => {
           </div>
         </Toolbar>
 
-        <Table>
+        <Table className={classes.table}>
           <TableHead>
             <TableRow>
               <TableCell colSpan={1}>
@@ -81,11 +81,11 @@ const UserListPage: FC<Props> = (props: Props) => {
             {
               users.map((user, index: number) => (
                 <TableRow key={index}>
-                  <TableCell>
+                  <TableCell datatype="Nome">
                     {user.name}
                   </TableCell>
 
-                  <TableCell >
+                  <TableCell datatype="Email">
                     {user.email}
                   </TableCell>
 

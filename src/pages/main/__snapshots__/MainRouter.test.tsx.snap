@@ -18,8 +18,19 @@ exports[`MainRouter should match snapshot 1`] = `
     open={false}
     redirect_to={[Function]}
     toggleDrawer={[Function]}
+    user={
+      Object {
+        "admin": true,
+        "email": "test@email.cone",
+        "nome": "Jorginho",
+        "user": "string",
+      }
+    }
   />
-  <BrowserRouter>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-162"
+    maxWidth="md"
+  >
     <Switch>
       <Route
         component={
@@ -40,6 +51,84 @@ exports[`MainRouter should match snapshot 1`] = `
             "$$typeof": Symbol(react.memo),
             "WrappedComponent": [Function],
             "compare": null,
+            "displayName": "Connect(UserListContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/users"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(UserFormContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/users/new"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(UserFormContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/users/:userId/edit"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(ProfileContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/profile/edit"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(MenusFormContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/menus/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(ExchangesContainer)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/trocas"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
             "displayName": "Connect(NotFoundPage)",
             "type": [Function],
           }
@@ -47,7 +136,7 @@ exports[`MainRouter should match snapshot 1`] = `
         path="**"
       />
     </Switch>
-  </BrowserRouter>
+  </WithStyles(ForwardRef(Container))>
   <Snack
     closeSnack={[Function]}
     open={false}

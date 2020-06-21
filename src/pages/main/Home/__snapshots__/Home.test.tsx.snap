@@ -4,8 +4,8 @@ exports[`NotFound Home form should match snapshot 1`] = `
 <ReduxForm
   _reduxForm={null}
   destroyOnUnmount={true}
-  dispatch={[Function]}
   enableReinitialize={false}
+  exchangeDish={[Function]}
   forceUnregisterOnUnmount={false}
   form="homeForm"
   getFormState={[Function]}
@@ -95,32 +95,4 @@ exports[`NotFound Home form should match snapshot 1`] = `
   touchOnChange={false}
   updateUnregisteredFields={false}
 />
-`;
-
-exports[`NotFound Should match snapshot 1`] = `
-<main
-  className="Home"
->
-  <article
-    className="Center-container-horizontal s800"
-  >
-    <Connect(ReduxForm)
-      fetchMenus={[Function]}
-      menus={Array []}
-      onSubmit={[Function]}
-      setTab={[Function]}
-      setTitle={[Function]}
-      store={
-        Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        }
-      }
-      tabIndex={0}
-    />
-  </article>
-</main>
 `;

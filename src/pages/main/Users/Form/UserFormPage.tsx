@@ -8,7 +8,8 @@ import {
   Button,
   CardActions,
   LinearProgress,
-  IconButton
+  IconButton,
+  CircularProgress
 } from '@material-ui/core';
 import RenderTextField from '../../../../shared/components/renderTextField/renderTextField';
 import { required, isEmail } from '../../../../shared/validators/validators';
@@ -133,8 +134,15 @@ const UserFormPage: FC<InjectedFormProps<any, Props>> = (props: any) => {
               variant="contained"
               color="primary"
               type="submit"
+              disabled={loading}
             >
-              Enviar
+              {loading
+                ? (
+                  <CircularProgress size={24} />
+                ) : (
+                  'Salvar'
+                )
+              }
             </Button>
 
           </CardActions>
