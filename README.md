@@ -9,4 +9,12 @@ senha : convidado
 
 ## Visão ADM
 
-![Drawe](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/01.PNG?raw=true)
+![](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/01.PNG?raw=true)
+
+![](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/02.PNG?raw=true)
+
+![](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/03.PNG?raw=true)
+
+![](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/04.PNG?raw=true)
+
+![](https://github.com/gabriel-Oak/gaia-react/blob/master/demo/05.PNG?raw=true)
