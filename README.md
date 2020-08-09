@@ -4,7 +4,7 @@ O gaia cardapio se resume em um app responsivo para que empresas que forneçam a
 corporativo possam gerenciar as trocas e os cardapios.
 
 ## [DEMO](http://gaia-web.herokuapp.com)
-email: convidade@teste.com
+email: convidado@teste.com
 senha : convidado
 
 ## Visão ADM
